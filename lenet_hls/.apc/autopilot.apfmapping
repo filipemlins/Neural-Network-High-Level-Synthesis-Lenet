@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="lenet_hls.cpp" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/lenet_hls.cpp"/>
+    <originFiles name="activations.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/activations.h"/>
+    <originFiles name="defines.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/defines.h"/>
+    <originFiles name="weights_conv1layer.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/weights_conv1layer.h"/>
+    <originFiles name="weights_conv2layer.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/weights_conv2layer.h"/>
+    <originFiles name="weights_fc1.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/weights_fc1.h"/>
+    <originFiles name="weights_fc2.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/weights_fc2.h"/>
+    <originFiles name="weights_fc3.h" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/weights_fc3.h"/>
+  </source>
+  <testbench>
+    <originFiles name="lenet_hls_test.cpp" path="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/lenet_hls_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

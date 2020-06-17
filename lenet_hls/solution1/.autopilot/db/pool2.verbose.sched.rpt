@@ -1,0 +1,327 @@
+
+
+================================================================
+== Vivado HLS Report for 'pool2'
+================================================================
+* Date:           Wed Jun 17 16:34:45 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        lenet_hls
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.625|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  15617|  15617|  15617|  15617|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                              |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |           Loop Name          |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- pool_layer2_label18         |  15616|  15616|       976|          -|          -|    16|    no    |
+        | + pool_layer2_label181       |    169|    169|         1|          -|          -|   169|    no    |
+        | + pool_layer2_label13        |    804|    804|       134|          -|          -|     6|    no    |
+        |  ++ pool_layer2_label14      |    132|    132|        22|          -|          -|     6|    no    |
+        |   +++ pool_layer2_label6     |     20|     20|        10|          -|          -|     2|    no    |
+        |    ++++ pool_layer2_label15  |      8|      8|         4|          -|          -|     2|    no    |
+        +------------------------------+-------+-------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	3  / (!exitcond9)
+	4  / (exitcond9)
+4 --> 
+	5  / (tmp_4)
+	2  / (!tmp_4)
+5 --> 
+	6  / (tmp_6)
+	4  / (!tmp_6)
+6 --> 
+	7  / (!exitcond8)
+	5  / (exitcond8)
+7 --> 
+	8  / (!exitcond)
+	6  / (exitcond)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	7  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_1 = alloca float"   --->   Operation 11 'alloca' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(float* %out_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str76, i32 0, i32 0, [1 x i8]* @p_str77, [1 x i8]* @p_str78, [1 x i8]* @p_str79, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str80, [1 x i8]* @p_str81)"   --->   Operation 12 'specinterface' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecInterface(float* %in_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str69, i32 0, i32 0, [1 x i8]* @p_str70, [1 x i8]* @p_str71, [1 x i8]* @p_str72, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str73, [1 x i8]* @p_str74)"   --->   Operation 13 'specinterface' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%pool_buff = alloca [169 x float], align 16" [lenet_hls/lenet_hls.cpp:239]   --->   Operation 14 'alloca' 'pool_buff' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_1 : Operation 15 [1/1] (1.66ns)   --->   "store float 0.000000e+00, float* %tmp_1"   --->   Operation 15 'store' <Predicate = true> <Delay = 1.66>
+ST_1 : Operation 16 [1/1] (1.66ns)   --->   "br label %1" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 16 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 1.86>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%k = phi i5 [ 0, %0 ], [ %k_1, %14 ]"   --->   Operation 17 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.44ns)   --->   "%exitcond1 = icmp eq i5 %k, -16" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 18 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 19 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.86ns)   --->   "%k_1 = add i5 %k, 1" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 20 'add' 'k_1' <Predicate = true> <Delay = 1.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %15, label %2" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 21 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str19) nounwind" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 22 'specloopname' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str19)" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 23 'specregionbegin' 'tmp_7' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.66ns)   --->   "br label %3" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 24 'br' <Predicate = (!exitcond1)> <Delay = 1.66>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "ret void" [lenet_hls/lenet_hls.cpp:279]   --->   Operation 25 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.16>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%p = phi i8 [ 0, %2 ], [ %p_1, %4 ]"   --->   Operation 26 'phi' 'p' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (1.47ns)   --->   "%exitcond9 = icmp eq i8 %p, -87" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 27 'icmp' 'exitcond9' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 169, i64 169, i64 169)"   --->   Operation 28 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (2.11ns)   --->   "%p_1 = add i8 %p, 1" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 29 'add' 'p_1' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %.preheader.preheader, label %4" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 30 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([21 x i8]* @p_str20) nounwind" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 31 'specloopname' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%tmp = zext i8 %p to i64" [lenet_hls/lenet_hls.cpp:246]   --->   Operation 32 'zext' 'tmp' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%pool_buff_addr_1 = getelementptr inbounds [169 x float]* %pool_buff, i64 0, i64 %tmp" [lenet_hls/lenet_hls.cpp:246]   --->   Operation 33 'getelementptr' 'pool_buff_addr_1' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (3.90ns)   --->   "%tmp_14 = call float @_ssdm_op_Read.ap_fifo.volatile.floatP(float* %in_V)" [lenet_hls/lenet_hls.cpp:246]   --->   Operation 34 'read' 'tmp_14' <Predicate = (!exitcond9)> <Delay = 3.90> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_3 : Operation 35 [1/1] (3.25ns)   --->   "store float %tmp_14, float* %pool_buff_addr_1, align 4" [lenet_hls/lenet_hls.cpp:246]   --->   Operation 35 'store' <Predicate = (!exitcond9)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %3" [lenet_hls/lenet_hls.cpp:245]   --->   Operation 36 'br' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.66ns)   --->   "br label %.preheader" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 37 'br' <Predicate = (exitcond9)> <Delay = 1.66>
+
+State 4 <SV = 3> <Delay = 1.66>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%i = phi i4 [ %i_1, %13 ], [ 0, %.preheader.preheader ]"   --->   Operation 38 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (1.44ns)   --->   "%tmp_4 = icmp ult i4 %i, -4" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 39 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6)"   --->   Operation 40 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %5, label %14" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 41 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str21) nounwind" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 42 'specloopname' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str21)" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 43 'specregionbegin' 'tmp_3' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (1.66ns)   --->   "br label %6" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 44 'br' <Predicate = (tmp_4)> <Delay = 1.66>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str19, i32 %tmp_7)" [lenet_hls/lenet_hls.cpp:278]   --->   Operation 45 'specregionend' 'empty_16' <Predicate = (!tmp_4)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "br label %1" [lenet_hls/lenet_hls.cpp:243]   --->   Operation 46 'br' <Predicate = (!tmp_4)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.77>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%j = phi i4 [ 0, %5 ], [ %j_1, %12 ]"   --->   Operation 47 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (1.44ns)   --->   "%tmp_6 = icmp ult i4 %j, -4" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 48 'icmp' 'tmp_6' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6)"   --->   Operation 49 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "br i1 %tmp_6, label %7, label %13" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 50 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str22) nounwind" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 51 'specloopname' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_10 = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str22)" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 52 'specregionbegin' 'tmp_10' <Predicate = (tmp_6)> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (1.66ns)   --->   "br label %8" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 53 'br' <Predicate = (tmp_6)> <Delay = 1.66>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str21, i32 %tmp_3)" [lenet_hls/lenet_hls.cpp:277]   --->   Operation 54 'specregionend' 'empty_15' <Predicate = (!tmp_6)> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (1.77ns)   --->   "%i_1 = add i4 %i, 2" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 55 'add' 'i_1' <Predicate = (!tmp_6)> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "br label %.preheader" [lenet_hls/lenet_hls.cpp:249]   --->   Operation 56 'br' <Predicate = (!tmp_6)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 5.25>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%l = phi i2 [ 0, %7 ], [ %l_1, %11 ]"   --->   Operation 57 'phi' 'l' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%l_cast4 = zext i2 %l to i4" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 58 'zext' 'l_cast4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_15 = trunc i2 %l to i1" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 59 'trunc' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.93ns)   --->   "%exitcond8 = icmp eq i2 %l, -2" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 60 'icmp' 'exitcond8' <Predicate = true> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 61 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (1.58ns)   --->   "%l_1 = add i2 1, %l" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 62 'add' 'l_1' <Predicate = true> <Delay = 1.58> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %exitcond8, label %12, label %9" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 63 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str23) nounwind" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 64 'specloopname' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_11 = call i32 (...)* @_ssdm_op_SpecRegionBegin([19 x i8]* @p_str23)" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 65 'specregionbegin' 'tmp_11' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (1.77ns)   --->   "%tmp_9 = add i4 %i, %l_cast4" [lenet_hls/lenet_hls.cpp:253]   --->   Operation 66 'add' 'tmp_9' <Predicate = (!exitcond8)> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_9_cast_cast = zext i4 %tmp_9 to i8" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 67 'zext' 'tmp_9_cast_cast' <Predicate = (!exitcond8)> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (3.48ns)   --->   "%tmp_s = mul i8 %tmp_9_cast_cast, 13" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 68 'mul' 'tmp_s' <Predicate = (!exitcond8)> <Delay = 3.48> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.48> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (0.93ns)   --->   "%tmp_2 = icmp eq i2 %l, 1" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 69 'icmp' 'tmp_2' <Predicate = (!exitcond8)> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (1.66ns)   --->   "br label %._crit_edge12" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 70 'br' <Predicate = (!exitcond8)> <Delay = 1.66>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str22, i32 %tmp_10)" [lenet_hls/lenet_hls.cpp:274]   --->   Operation 71 'specregionend' 'empty_14' <Predicate = (exitcond8)> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (1.77ns)   --->   "%j_1 = add i4 %j, 2" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 72 'add' 'j_1' <Predicate = (exitcond8)> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "br label %6" [lenet_hls/lenet_hls.cpp:250]   --->   Operation 73 'br' <Predicate = (exitcond8)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 7.14>
+ST_7 : Operation 74 [1/1] (0.00ns)   --->   "%m = phi i2 [ 0, %9 ], [ %m_1, %._crit_edge12.backedge ]"   --->   Operation 74 'phi' 'm' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 75 [1/1] (0.00ns)   --->   "%m_cast2_cast = zext i2 %m to i4" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 75 'zext' 'm_cast2_cast' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 76 [1/1] (0.00ns)   --->   "%tmp_17 = trunc i2 %m to i1" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 76 'trunc' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 77 [1/1] (0.93ns)   --->   "%exitcond = icmp eq i2 %m, -2" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 77 'icmp' 'exitcond' <Predicate = true> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 78 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 78 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 79 [1/1] (1.58ns)   --->   "%m_1 = add i2 1, %m" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 79 'add' 'm_1' <Predicate = true> <Delay = 1.58> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 80 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %11, label %_ifconv" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 80 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 81 [1/1] (1.77ns)   --->   "%tmp4 = add i4 %j, %m_cast2_cast" [lenet_hls/lenet_hls.cpp:253]   --->   Operation 81 'add' 'tmp4' <Predicate = (!exitcond)> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 82 [1/1] (0.00ns)   --->   "%tmp4_cast = zext i4 %tmp4 to i8" [lenet_hls/lenet_hls.cpp:253]   --->   Operation 82 'zext' 'tmp4_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 83 [1/1] (2.11ns)   --->   "%array_access = add i8 %tmp4_cast, %tmp_s" [lenet_hls/lenet_hls.cpp:253]   --->   Operation 83 'add' 'array_access' <Predicate = (!exitcond)> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 84 [1/1] (0.94ns)   --->   "%tmp_5 = or i1 %tmp_17, %tmp_15" [lenet_hls/lenet_hls.cpp:256]   --->   Operation 84 'or' 'tmp_5' <Predicate = (!exitcond)> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_8 = zext i8 %array_access to i64" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 85 'zext' 'tmp_8' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 86 [1/1] (0.00ns)   --->   "%pool_buff_addr = getelementptr inbounds [169 x float]* %pool_buff, i64 0, i64 %tmp_8" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 86 'getelementptr' 'pool_buff_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_7 : Operation 87 [2/2] (3.25ns)   --->   "%value = load float* %pool_buff_addr, align 4" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 87 'load' 'value' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+ST_7 : Operation 88 [1/1] (0.93ns)   --->   "%tmp_13 = icmp eq i2 %m, 1" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 88 'icmp' 'tmp_13' <Predicate = (!exitcond)> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 89 [1/1] (0.94ns)   --->   "%or_cond = and i1 %tmp_2, %tmp_13" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 89 'and' 'or_cond' <Predicate = (!exitcond)> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecRegionEnd([19 x i8]* @p_str23, i32 %tmp_11)" [lenet_hls/lenet_hls.cpp:271]   --->   Operation 90 'specregionend' 'empty_13' <Predicate = (exitcond)> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "br label %8" [lenet_hls/lenet_hls.cpp:251]   --->   Operation 91 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 3.25>
+ST_8 : Operation 92 [1/2] (3.25ns)   --->   "%value = load float* %pool_buff_addr, align 4" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 92 'load' 'value' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 169> <RAM>
+
+State 9 <SV = 8> <Delay = 6.61>
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_1_load = load float* %tmp_1" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 93 'load' 'tmp_1_load' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_9 : Operation 94 [1/1] (6.61ns)   --->   "%tmp_21 = fcmp ogt float %tmp_1_load, %value" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 94 'fcmp' 'tmp_21' <Predicate = (tmp_5)> <Delay = 6.61> <Core = "FCmp">   --->   Core 110 'FCmp' <Latency = 0> <II = 1> <Delay = 6.61> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 8.62>
+ST_10 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str24) nounwind" [lenet_hls/lenet_hls.cpp:252]   --->   Operation 95 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 96 [1/1] (0.00ns)   --->   "%p_0_4_to_int = bitcast float %tmp_1_load to i32" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 96 'bitcast' 'p_0_4_to_int' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_0_4_to_int, i32 23, i32 30)" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 97 'partselect' 'tmp_12' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_23 = trunc i32 %p_0_4_to_int to i23" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 98 'trunc' 'tmp_23' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 99 [1/1] (0.00ns)   --->   "%value_to_int = bitcast float %value to i32" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 99 'bitcast' 'value_to_int' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_16 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %value_to_int, i32 23, i32 30)" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 100 'partselect' 'tmp_16' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_24 = trunc i32 %value_to_int to i23" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 101 'trunc' 'tmp_24' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_10 : Operation 102 [1/1] (1.47ns)   --->   "%notlhs = icmp ne i8 %tmp_12, -1" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 102 'icmp' 'notlhs' <Predicate = (tmp_5)> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 103 [1/1] (2.40ns)   --->   "%notrhs = icmp eq i23 %tmp_23, 0" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 103 'icmp' 'notrhs' <Predicate = (tmp_5)> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_18 = or i1 %notrhs, %notlhs" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 104 'or' 'tmp_18' <Predicate = (tmp_5)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 105 [1/1] (1.47ns)   --->   "%notlhs5 = icmp ne i8 %tmp_16, -1" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 105 'icmp' 'notlhs5' <Predicate = (tmp_5)> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 106 [1/1] (2.40ns)   --->   "%notrhs6 = icmp eq i23 %tmp_24, 0" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 106 'icmp' 'notrhs6' <Predicate = (tmp_5)> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_19 = or i1 %notrhs6, %notlhs5" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 107 'or' 'tmp_19' <Predicate = (tmp_5)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_20 = and i1 %tmp_18, %tmp_19" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 108 'and' 'tmp_20' <Predicate = (tmp_5)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_22 = and i1 %tmp_20, %tmp_21" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 109 'and' 'tmp_22' <Predicate = (tmp_5)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 110 [1/1] (0.94ns) (out node of the LUT)   --->   "%sel_tmp = and i1 %tmp_5, %tmp_22" [lenet_hls/lenet_hls.cpp:262]   --->   Operation 110 'and' 'sel_tmp' <Predicate = (tmp_5)> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node value_3)   --->   "%value_1 = select i1 %sel_tmp, float %tmp_1_load, float %value" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 111 'select' 'value_1' <Predicate = (tmp_5)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 112 [1/1] (1.37ns) (out node of the LUT)   --->   "%value_3 = select i1 %tmp_5, float %value_1, float %value" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 112 'select' 'value_3' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 113 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %10, label %_ifconv.._crit_edge12.backedge_crit_edge" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 113 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 114 [1/1] (1.66ns)   --->   "store float %value_3, float* %tmp_1" [lenet_hls/lenet_hls.cpp:258]   --->   Operation 114 'store' <Predicate = (!or_cond)> <Delay = 1.66>
+ST_10 : Operation 115 [1/1] (0.00ns)   --->   "br label %._crit_edge12.backedge" [lenet_hls/lenet_hls.cpp:264]   --->   Operation 115 'br' <Predicate = (!or_cond)> <Delay = 0.00>
+ST_10 : Operation 116 [1/1] (3.90ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.floatP(float* %out_V, float %value_3)" [lenet_hls/lenet_hls.cpp:265]   --->   Operation 116 'write' <Predicate = (or_cond)> <Delay = 3.90> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.90> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_10 : Operation 117 [1/1] (1.66ns)   --->   "store float 0.000000e+00, float* %tmp_1"   --->   Operation 117 'store' <Predicate = (or_cond)> <Delay = 1.66>
+ST_10 : Operation 118 [1/1] (0.00ns)   --->   "br label %._crit_edge12.backedge" [lenet_hls/lenet_hls.cpp:269]   --->   Operation 118 'br' <Predicate = (or_cond)> <Delay = 0.00>
+ST_10 : Operation 119 [1/1] (0.00ns)   --->   "br label %._crit_edge12"   --->   Operation 119 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	'alloca' operation ('tmp') [3]  (0 ns)
+	'store' operation of constant 0 on local variable 'tmp' [7]  (1.66 ns)
+
+ <State 2>: 1.86ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', lenet_hls/lenet_hls.cpp:243) [10]  (0 ns)
+	'add' operation ('k', lenet_hls/lenet_hls.cpp:243) [13]  (1.86 ns)
+
+ <State 3>: 7.17ns
+The critical path consists of the following:
+	fifo read on port 'in_V' (lenet_hls/lenet_hls.cpp:246) [29]  (3.91 ns)
+	'store' operation (lenet_hls/lenet_hls.cpp:246) of variable 'tmp', lenet_hls/lenet_hls.cpp:246 on array 'pool_buff', lenet_hls/lenet_hls.cpp:239 [30]  (3.26 ns)
+
+ <State 4>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('j') with incoming values : ('j', lenet_hls/lenet_hls.cpp:250) [44]  (1.66 ns)
+
+ <State 5>: 1.78ns
+The critical path consists of the following:
+	'add' operation ('i', lenet_hls/lenet_hls.cpp:249) [125]  (1.78 ns)
+
+ <State 6>: 5.26ns
+The critical path consists of the following:
+	'phi' operation ('l') with incoming values : ('l', lenet_hls/lenet_hls.cpp:251) [53]  (0 ns)
+	'add' operation ('tmp_9', lenet_hls/lenet_hls.cpp:253) [63]  (1.78 ns)
+	'mul' operation ('tmp_s', lenet_hls/lenet_hls.cpp:264) [65]  (3.48 ns)
+
+ <State 7>: 7.15ns
+The critical path consists of the following:
+	'phi' operation ('m') with incoming values : ('m', lenet_hls/lenet_hls.cpp:252) [69]  (0 ns)
+	'add' operation ('tmp4', lenet_hls/lenet_hls.cpp:253) [79]  (1.78 ns)
+	'add' operation ('array_access', lenet_hls/lenet_hls.cpp:253) [81]  (2.12 ns)
+	'getelementptr' operation ('pool_buff_addr', lenet_hls/lenet_hls.cpp:258) [84]  (0 ns)
+	'load' operation ('value', lenet_hls/lenet_hls.cpp:258) on array 'pool_buff', lenet_hls/lenet_hls.cpp:239 [85]  (3.26 ns)
+
+ <State 8>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('value', lenet_hls/lenet_hls.cpp:258) on array 'pool_buff', lenet_hls/lenet_hls.cpp:239 [85]  (3.26 ns)
+
+ <State 9>: 6.62ns
+The critical path consists of the following:
+	'load' operation ('tmp_1_load', lenet_hls/lenet_hls.cpp:258) on local variable 'tmp' [77]  (0 ns)
+	'fcmp' operation ('tmp_21', lenet_hls/lenet_hls.cpp:262) [99]  (6.62 ns)
+
+ <State 10>: 8.63ns
+The critical path consists of the following:
+	'icmp' operation ('notrhs', lenet_hls/lenet_hls.cpp:262) [93]  (2.41 ns)
+	'or' operation ('tmp_18', lenet_hls/lenet_hls.cpp:262) [94]  (0 ns)
+	'and' operation ('tmp_20', lenet_hls/lenet_hls.cpp:262) [98]  (0 ns)
+	'and' operation ('tmp_22', lenet_hls/lenet_hls.cpp:262) [100]  (0 ns)
+	'and' operation ('sel_tmp', lenet_hls/lenet_hls.cpp:262) [101]  (0.942 ns)
+	'select' operation ('value', lenet_hls/lenet_hls.cpp:258) [102]  (0 ns)
+	'select' operation ('value', lenet_hls/lenet_hls.cpp:258) [103]  (1.37 ns)
+	fifo write on port 'out_V' (lenet_hls/lenet_hls.cpp:265) [111]  (3.91 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

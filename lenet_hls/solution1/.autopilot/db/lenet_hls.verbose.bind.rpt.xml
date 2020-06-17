@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'lenet_hls'" level="0">
+<item name = "Date">Wed Jun 17 16:34:56 2020
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">lenet_hls</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">aartix7</item>
+<item name = "Target device">xa7a12tcsg325-1q</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.656, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1294546, 1296402, 1294547, 1296403, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_pool1_fu_210">pool1, 41929, 41929, 41929, 41929, none</column>
+<column name="grp_conv1_fu_216">conv1, 1294546, 1296402, 1294546, 1296402, none</column>
+<column name="grp_fc3_fu_227">fc3, 10691, 10691, 10691, 10691, none</column>
+<column name="grp_conv2_fu_238">conv2, 1007922, 1007922, 1007922, 1007922, none</column>
+<column name="grp_fc1_fu_248">fc1, 902099, 902099, 902099, 902099, none</column>
+<column name="grp_fc2_fu_258">fc2, 122042, 122042, 122042, 122042, none</column>
+<column name="grp_pool2_fu_268">pool2, 15617, 15617, 15617, 15617, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
