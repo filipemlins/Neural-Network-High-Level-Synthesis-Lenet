@@ -14,7 +14,7 @@ Each directory contains gen_proj.tcl that can be used to setup te Vivado HLS env
 To generate the project for the main implemention follow the steps bellow:
 1) Clone the repo: git clone https://github.com/filipemlins/Neural-Network-High-Level-Synthesis-Lenet/
 2) Go to nnet_stream directory: CNN-using-HLS/nnet_stream/
-3) Create the project add the headers and lenet_hls.cpp. In the testbench add lenet_hls_test.cpp
+3) Create the project add the headers file in the lenet_hls/header folder, and lenet_hls.cpp. In the testbench add lenet_hls_test.cpp
 
 ### Software used: ###
 
