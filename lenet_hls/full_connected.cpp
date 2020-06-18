@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 #include "headers/full_connected.h"
 
-
+/*
 void fc1(hls::stream<float> &out, hls::stream<float> &in,
 		float weight[FC1_WEIGHTS_H][FC1_WEIGHTS_W],
 		float bias[FC1_BIAS_SIZE]) {
@@ -44,7 +44,6 @@ void fc1(hls::stream<float> &out, hls::stream<float> &in,
 
 	for (int j = 0; j < FC1_WEIGHTS_H; j++) {
 		fc_layer1_label40: for (int i = 0; i < FC1_WEIGHTS_W; i++) {
-			//	output[i] += weight[j][i] * fc1_buff.val[j][0];
 			output[i] += weight[j][i] * fc1_buff[j];
 
 		}
@@ -103,10 +102,97 @@ void fc3(hls::stream<float> &out, hls::stream<float> &in,
 	}
 
 	fc_layer1_label16: for (int i = 0; i < FC3_WEIGHTS_W; i++){
-		//cout << output[i] << " " << exp(output[i]) << " " << soft_max_value << endl;
-		//out << (hls::exp(output[i].to_float())/soft_max_value);
 		out << (hls::exp(output[i])/soft_max_value);
 		//cout << (hls::exp(output[i])/soft_max_value) << endl;
 	}
 
 }
+
+*/
+
+void fc1(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC1_WEIGHTS_H][FC1_WEIGHTS_W],
+		float24_t bias[FC1_BIAS_SIZE]) {
+	float24_t read;
+	float24_t output[FC1_ACT_SIZE] = { 0 };
+
+	float24_t fc1_buff[FC1_WEIGHTS_W*FC1_WEIGHTS_H] ={0};
+
+	for (int i = 0; i < P2_CHANNELS; i++){
+		for (int j = 0; j < P2_SIZE*P2_SIZE; j++) {
+			in >> fc1_buff[j*P2_CHANNELS+i];
+		}
+	}
+//		cout << "FLATTEN" << endl;
+//		for (int j = 0; j < FC1_WEIGHTS_H; j++) {
+//			cout << fc1_buff[j] << endl;
+//		}
+
+	for (int j = 0; j < FC1_WEIGHTS_H; j++) {
+		fc_layer1_label40: for (int i = 0; i < FC1_WEIGHTS_W; i++) {
+			output[i] += weight[j][i] * fc1_buff[j];
+
+		}
+	}
+
+
+	fc_layer1_label11: for (int i = 0; i < FC1_WEIGHTS_W; i++){
+		out << relu(output[i] + bias[i]);
+		//cout << relu(output[i] + bias[i]) << endl;
+		}
+
+}
+
+void fc2(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC2_WEIGHTS_H][FC2_WEIGHTS_W],
+		float24_t bias[FC2_BIAS_SIZE]) {
+	float24_t read;
+	float24_t output[FC2_ACT_SIZE] = { 0 };
+
+
+	fc_layer2_label13: for (int j = 0; j < FC2_WEIGHTS_H; j++) {
+		in >> read;
+		fc_layer2_label41: for (int i = 0; i < FC2_WEIGHTS_W; i++) {
+			output[i] += weight[j][i] * read;
+		}
+	}
+	fc_layer2_label11: for (int i = 0; i < FC2_WEIGHTS_W; i++){
+		out << relu(output[i] + bias[i]);
+		//cout << relu(output[i] + bias[i]) << endl;
+	}
+}
+
+void fc3(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC3_WEIGHTS_H][FC3_WEIGHTS_W],
+		float24_t bias[FC3_BIAS_SIZE]) {
+
+	float24_t read;
+	float24_t output[FC3_ACT_SIZE] = { 0 };
+
+
+	fc_layer3_label10: for (int j = 0; j < FC3_WEIGHTS_H; j++) {
+		in >> read;
+		fc_layer3_label42: for (int i = 0; i < FC3_WEIGHTS_W; i++) {
+			output[i] += weight[j][i] * read; //.to_float24_t();
+			//cout << i <<  " = " << j << " " << i << endl;
+		}
+	}
+
+	float soft_max_value = 0;
+
+	fc_layer1_label15: for (int i = 0; i < FC3_WEIGHTS_W; i++){
+		output[i] += bias[i];
+
+		soft_max_value += hls::exp(output[i].to_float());
+
+	}
+
+	fc_layer1_label16: for (int i = 0; i < FC3_WEIGHTS_W; i++){
+		//cout << output[i] << " " << exp(output[i]) << " " << soft_max_value << endl;
+		out << (hls::exp(output[i].to_float())/soft_max_value);
+	}
+
+}
+
+
+

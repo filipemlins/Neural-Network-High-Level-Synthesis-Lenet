@@ -59,6 +59,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/etc"/>
                                     								
                                 </option>
@@ -92,6 +94,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/etc"/>
                                     								
@@ -187,6 +191,8 @@
                         					
                     </fileInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1898485471.496227613" name="lenet_hls_test.h" rcbsApplicability="disable" resourcePath="testbench/lenet_hls_test.h" toolsToInvoke=""/>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -257,6 +263,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/ap_sysc"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/etc"/>
                                     								
                                 </option>
@@ -280,6 +288,8 @@
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet"/>
                                     									
                                     <listOptionValue builtIn="false" value="/tools/Xilinx/Vivado/2018.3/include/etc"/>
                                     								
@@ -364,6 +374,8 @@
                         </tool>
                         					
                     </fileInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.341506728.1127975653" name="lenet_hls_test.h" rcbsApplicability="disable" resourcePath="testbench/lenet_hls_test.h" toolsToInvoke=""/>
                     					
                     <sourceEntries>
                         						

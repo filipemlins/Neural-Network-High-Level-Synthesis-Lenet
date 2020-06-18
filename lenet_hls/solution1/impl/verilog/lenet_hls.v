@@ -7,15 +7,15 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="lenet_hls,hls_ip_2018_3,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xa7a12tcsg325-1q,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.656250,HLS_SYN_LAT=1295474,HLS_SYN_TPT=1295475,HLS_SYN_MEM=557,HLS_SYN_DSP=32,HLS_SYN_FF=122935,HLS_SYN_LUT=32686,HLS_VERSION=2018_3}" *)
+(* CORE_GENERATION_INFO="lenet_hls,hls_ip_2018_3,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z007sclg225-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=9.634000,HLS_SYN_LAT=447746,HLS_SYN_TPT=447747,HLS_SYN_MEM=235,HLS_SYN_DSP=14,HLS_SYN_FF=51611,HLS_SYN_LUT=36820,HLS_VERSION=2018_3}" *)
 
 module lenet_hls (
-        image_in_V_dout,
-        image_in_V_empty_n,
-        image_in_V_read,
-        fc3_out_V_din,
-        fc3_out_V_full_n,
-        fc3_out_V_write,
+        image_in_V_V_dout,
+        image_in_V_V_empty_n,
+        image_in_V_V_read,
+        fc3_out_V_V_din,
+        fc3_out_V_V_full_n,
+        fc3_out_V_V_write,
         ap_clk,
         ap_rst,
         ap_start,
@@ -25,12 +25,12 @@ module lenet_hls (
 );
 
 
-input  [31:0] image_in_V_dout;
-input   image_in_V_empty_n;
-output   image_in_V_read;
-output  [31:0] fc3_out_V_din;
-input   fc3_out_V_full_n;
-output   fc3_out_V_write;
+input  [15:0] image_in_V_V_dout;
+input   image_in_V_V_empty_n;
+output   image_in_V_V_read;
+output  [15:0] fc3_out_V_V_din;
+input   fc3_out_V_V_full_n;
+output   fc3_out_V_V_write;
 input   ap_clk;
 input   ap_rst;
 input   ap_start;
@@ -45,9 +45,9 @@ wire    conv1_U0_ap_idle;
 wire    conv1_U0_ap_ready;
 wire    conv1_U0_start_out;
 wire    conv1_U0_start_write;
-wire   [31:0] conv1_U0_conv1_out_V_din;
-wire    conv1_U0_conv1_out_V_write;
-wire    conv1_U0_in_V_read;
+wire   [15:0] conv1_U0_conv1_out_V_V_din;
+wire    conv1_U0_conv1_out_V_V_write;
+wire    conv1_U0_in_V_V_read;
 wire    pool1_U0_ap_start;
 wire    pool1_U0_ap_done;
 wire    pool1_U0_ap_continue;
@@ -55,9 +55,9 @@ wire    pool1_U0_ap_idle;
 wire    pool1_U0_ap_ready;
 wire    pool1_U0_start_out;
 wire    pool1_U0_start_write;
-wire   [31:0] pool1_U0_out_V_din;
-wire    pool1_U0_out_V_write;
-wire    pool1_U0_in_V_read;
+wire   [15:0] pool1_U0_out_V_V_din;
+wire    pool1_U0_out_V_V_write;
+wire    pool1_U0_in_V_V_read;
 wire    conv2_U0_ap_start;
 wire    conv2_U0_ap_done;
 wire    conv2_U0_ap_continue;
@@ -65,9 +65,9 @@ wire    conv2_U0_ap_idle;
 wire    conv2_U0_ap_ready;
 wire    conv2_U0_start_out;
 wire    conv2_U0_start_write;
-wire   [31:0] conv2_U0_conv2_out_V_din;
-wire    conv2_U0_conv2_out_V_write;
-wire    conv2_U0_in_V_read;
+wire   [15:0] conv2_U0_conv2_out_V_V_din;
+wire    conv2_U0_conv2_out_V_V_write;
+wire    conv2_U0_in_V_V_read;
 wire    pool2_U0_ap_start;
 wire    pool2_U0_ap_done;
 wire    pool2_U0_ap_continue;
@@ -75,9 +75,9 @@ wire    pool2_U0_ap_idle;
 wire    pool2_U0_ap_ready;
 wire    pool2_U0_start_out;
 wire    pool2_U0_start_write;
-wire   [31:0] pool2_U0_out_V_din;
-wire    pool2_U0_out_V_write;
-wire    pool2_U0_in_V_read;
+wire   [15:0] pool2_U0_out_V_V_din;
+wire    pool2_U0_out_V_V_write;
+wire    pool2_U0_in_V_V_read;
 wire    fc1_U0_ap_start;
 wire    fc1_U0_ap_done;
 wire    fc1_U0_ap_continue;
@@ -85,9 +85,9 @@ wire    fc1_U0_ap_idle;
 wire    fc1_U0_ap_ready;
 wire    fc1_U0_start_out;
 wire    fc1_U0_start_write;
-wire   [31:0] fc1_U0_out_V_din;
-wire    fc1_U0_out_V_write;
-wire    fc1_U0_in_V_read;
+wire   [15:0] fc1_U0_out_V_V_din;
+wire    fc1_U0_out_V_V_write;
+wire    fc1_U0_in_V_V_read;
 wire    fc2_U0_ap_start;
 wire    fc2_U0_ap_done;
 wire    fc2_U0_ap_continue;
@@ -95,36 +95,36 @@ wire    fc2_U0_ap_idle;
 wire    fc2_U0_ap_ready;
 wire    fc2_U0_start_out;
 wire    fc2_U0_start_write;
-wire   [31:0] fc2_U0_out_V_din;
-wire    fc2_U0_out_V_write;
-wire    fc2_U0_in_V_read;
+wire   [15:0] fc2_U0_out_V_V_din;
+wire    fc2_U0_out_V_V_write;
+wire    fc2_U0_in_V_V_read;
 wire    fc3_U0_ap_start;
 wire    fc3_U0_ap_done;
 wire    fc3_U0_ap_continue;
 wire    fc3_U0_ap_idle;
 wire    fc3_U0_ap_ready;
-wire   [31:0] fc3_U0_out_V_din;
-wire    fc3_U0_out_V_write;
-wire    fc3_U0_in_V_read;
+wire   [15:0] fc3_U0_out_V_V_din;
+wire    fc3_U0_out_V_V_write;
+wire    fc3_U0_in_V_V_read;
 wire    ap_sync_continue;
-wire    conv1_out_V_full_n;
-wire   [31:0] conv1_out_V_dout;
-wire    conv1_out_V_empty_n;
-wire    pool1_out_V_full_n;
-wire   [31:0] pool1_out_V_dout;
-wire    pool1_out_V_empty_n;
-wire    conv2_out_V_full_n;
-wire   [31:0] conv2_out_V_dout;
-wire    conv2_out_V_empty_n;
-wire    pool2_out_V_full_n;
-wire   [31:0] pool2_out_V_dout;
-wire    pool2_out_V_empty_n;
-wire    fc1_out_V_full_n;
-wire   [31:0] fc1_out_V_dout;
-wire    fc1_out_V_empty_n;
-wire    fc2_out_V_full_n;
-wire   [31:0] fc2_out_V_dout;
-wire    fc2_out_V_empty_n;
+wire    conv1_out_V_V_full_n;
+wire   [15:0] conv1_out_V_V_dout;
+wire    conv1_out_V_V_empty_n;
+wire    pool1_out_V_V_full_n;
+wire   [15:0] pool1_out_V_V_dout;
+wire    pool1_out_V_V_empty_n;
+wire    conv2_out_V_V_full_n;
+wire   [15:0] conv2_out_V_V_dout;
+wire    conv2_out_V_V_empty_n;
+wire    pool2_out_V_V_full_n;
+wire   [15:0] pool2_out_V_V_dout;
+wire    pool2_out_V_V_empty_n;
+wire    fc1_out_V_V_full_n;
+wire   [15:0] fc1_out_V_V_dout;
+wire    fc1_out_V_V_empty_n;
+wire    fc2_out_V_V_full_n;
+wire   [15:0] fc2_out_V_V_dout;
+wire    fc2_out_V_V_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
 wire   [0:0] start_for_pool1_U0_din;
@@ -165,12 +165,12 @@ conv1 conv1_U0(
     .ap_ready(conv1_U0_ap_ready),
     .start_out(conv1_U0_start_out),
     .start_write(conv1_U0_start_write),
-    .conv1_out_V_din(conv1_U0_conv1_out_V_din),
-    .conv1_out_V_full_n(conv1_out_V_full_n),
-    .conv1_out_V_write(conv1_U0_conv1_out_V_write),
-    .in_V_dout(image_in_V_dout),
-    .in_V_empty_n(image_in_V_empty_n),
-    .in_V_read(conv1_U0_in_V_read)
+    .conv1_out_V_V_din(conv1_U0_conv1_out_V_V_din),
+    .conv1_out_V_V_full_n(conv1_out_V_V_full_n),
+    .conv1_out_V_V_write(conv1_U0_conv1_out_V_V_write),
+    .in_V_V_dout(image_in_V_V_dout),
+    .in_V_V_empty_n(image_in_V_V_empty_n),
+    .in_V_V_read(conv1_U0_in_V_V_read)
 );
 
 pool1 pool1_U0(
@@ -184,12 +184,12 @@ pool1 pool1_U0(
     .ap_ready(pool1_U0_ap_ready),
     .start_out(pool1_U0_start_out),
     .start_write(pool1_U0_start_write),
-    .out_V_din(pool1_U0_out_V_din),
-    .out_V_full_n(pool1_out_V_full_n),
-    .out_V_write(pool1_U0_out_V_write),
-    .in_V_dout(conv1_out_V_dout),
-    .in_V_empty_n(conv1_out_V_empty_n),
-    .in_V_read(pool1_U0_in_V_read)
+    .out_V_V_din(pool1_U0_out_V_V_din),
+    .out_V_V_full_n(pool1_out_V_V_full_n),
+    .out_V_V_write(pool1_U0_out_V_V_write),
+    .in_V_V_dout(conv1_out_V_V_dout),
+    .in_V_V_empty_n(conv1_out_V_V_empty_n),
+    .in_V_V_read(pool1_U0_in_V_V_read)
 );
 
 conv2 conv2_U0(
@@ -203,12 +203,12 @@ conv2 conv2_U0(
     .ap_ready(conv2_U0_ap_ready),
     .start_out(conv2_U0_start_out),
     .start_write(conv2_U0_start_write),
-    .conv2_out_V_din(conv2_U0_conv2_out_V_din),
-    .conv2_out_V_full_n(conv2_out_V_full_n),
-    .conv2_out_V_write(conv2_U0_conv2_out_V_write),
-    .in_V_dout(pool1_out_V_dout),
-    .in_V_empty_n(pool1_out_V_empty_n),
-    .in_V_read(conv2_U0_in_V_read)
+    .conv2_out_V_V_din(conv2_U0_conv2_out_V_V_din),
+    .conv2_out_V_V_full_n(conv2_out_V_V_full_n),
+    .conv2_out_V_V_write(conv2_U0_conv2_out_V_V_write),
+    .in_V_V_dout(pool1_out_V_V_dout),
+    .in_V_V_empty_n(pool1_out_V_V_empty_n),
+    .in_V_V_read(conv2_U0_in_V_V_read)
 );
 
 pool2 pool2_U0(
@@ -222,12 +222,12 @@ pool2 pool2_U0(
     .ap_ready(pool2_U0_ap_ready),
     .start_out(pool2_U0_start_out),
     .start_write(pool2_U0_start_write),
-    .out_V_din(pool2_U0_out_V_din),
-    .out_V_full_n(pool2_out_V_full_n),
-    .out_V_write(pool2_U0_out_V_write),
-    .in_V_dout(conv2_out_V_dout),
-    .in_V_empty_n(conv2_out_V_empty_n),
-    .in_V_read(pool2_U0_in_V_read)
+    .out_V_V_din(pool2_U0_out_V_V_din),
+    .out_V_V_full_n(pool2_out_V_V_full_n),
+    .out_V_V_write(pool2_U0_out_V_V_write),
+    .in_V_V_dout(conv2_out_V_V_dout),
+    .in_V_V_empty_n(conv2_out_V_V_empty_n),
+    .in_V_V_read(pool2_U0_in_V_V_read)
 );
 
 fc1 fc1_U0(
@@ -241,12 +241,12 @@ fc1 fc1_U0(
     .ap_ready(fc1_U0_ap_ready),
     .start_out(fc1_U0_start_out),
     .start_write(fc1_U0_start_write),
-    .out_V_din(fc1_U0_out_V_din),
-    .out_V_full_n(fc1_out_V_full_n),
-    .out_V_write(fc1_U0_out_V_write),
-    .in_V_dout(pool2_out_V_dout),
-    .in_V_empty_n(pool2_out_V_empty_n),
-    .in_V_read(fc1_U0_in_V_read)
+    .out_V_V_din(fc1_U0_out_V_V_din),
+    .out_V_V_full_n(fc1_out_V_V_full_n),
+    .out_V_V_write(fc1_U0_out_V_V_write),
+    .in_V_V_dout(pool2_out_V_V_dout),
+    .in_V_V_empty_n(pool2_out_V_V_empty_n),
+    .in_V_V_read(fc1_U0_in_V_V_read)
 );
 
 fc2 fc2_U0(
@@ -260,12 +260,12 @@ fc2 fc2_U0(
     .ap_ready(fc2_U0_ap_ready),
     .start_out(fc2_U0_start_out),
     .start_write(fc2_U0_start_write),
-    .out_V_din(fc2_U0_out_V_din),
-    .out_V_full_n(fc2_out_V_full_n),
-    .out_V_write(fc2_U0_out_V_write),
-    .in_V_dout(fc1_out_V_dout),
-    .in_V_empty_n(fc1_out_V_empty_n),
-    .in_V_read(fc2_U0_in_V_read)
+    .out_V_V_din(fc2_U0_out_V_V_din),
+    .out_V_V_full_n(fc2_out_V_V_full_n),
+    .out_V_V_write(fc2_U0_out_V_V_write),
+    .in_V_V_dout(fc1_out_V_V_dout),
+    .in_V_V_empty_n(fc1_out_V_V_empty_n),
+    .in_V_V_read(fc2_U0_in_V_V_read)
 );
 
 fc3 fc3_U0(
@@ -276,90 +276,90 @@ fc3 fc3_U0(
     .ap_continue(fc3_U0_ap_continue),
     .ap_idle(fc3_U0_ap_idle),
     .ap_ready(fc3_U0_ap_ready),
-    .out_V_din(fc3_U0_out_V_din),
-    .out_V_full_n(fc3_out_V_full_n),
-    .out_V_write(fc3_U0_out_V_write),
-    .in_V_dout(fc2_out_V_dout),
-    .in_V_empty_n(fc2_out_V_empty_n),
-    .in_V_read(fc3_U0_in_V_read)
+    .out_V_V_din(fc3_U0_out_V_V_din),
+    .out_V_V_full_n(fc3_out_V_V_full_n),
+    .out_V_V_write(fc3_U0_out_V_V_write),
+    .in_V_V_dout(fc2_out_V_V_dout),
+    .in_V_V_empty_n(fc2_out_V_V_empty_n),
+    .in_V_V_read(fc3_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A conv1_out_V_U(
+fifo_w16_d2_A conv1_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(conv1_U0_conv1_out_V_din),
-    .if_full_n(conv1_out_V_full_n),
-    .if_write(conv1_U0_conv1_out_V_write),
-    .if_dout(conv1_out_V_dout),
-    .if_empty_n(conv1_out_V_empty_n),
-    .if_read(pool1_U0_in_V_read)
+    .if_din(conv1_U0_conv1_out_V_V_din),
+    .if_full_n(conv1_out_V_V_full_n),
+    .if_write(conv1_U0_conv1_out_V_V_write),
+    .if_dout(conv1_out_V_V_dout),
+    .if_empty_n(conv1_out_V_V_empty_n),
+    .if_read(pool1_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A pool1_out_V_U(
+fifo_w16_d2_A pool1_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(pool1_U0_out_V_din),
-    .if_full_n(pool1_out_V_full_n),
-    .if_write(pool1_U0_out_V_write),
-    .if_dout(pool1_out_V_dout),
-    .if_empty_n(pool1_out_V_empty_n),
-    .if_read(conv2_U0_in_V_read)
+    .if_din(pool1_U0_out_V_V_din),
+    .if_full_n(pool1_out_V_V_full_n),
+    .if_write(pool1_U0_out_V_V_write),
+    .if_dout(pool1_out_V_V_dout),
+    .if_empty_n(pool1_out_V_V_empty_n),
+    .if_read(conv2_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A conv2_out_V_U(
+fifo_w16_d2_A conv2_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(conv2_U0_conv2_out_V_din),
-    .if_full_n(conv2_out_V_full_n),
-    .if_write(conv2_U0_conv2_out_V_write),
-    .if_dout(conv2_out_V_dout),
-    .if_empty_n(conv2_out_V_empty_n),
-    .if_read(pool2_U0_in_V_read)
+    .if_din(conv2_U0_conv2_out_V_V_din),
+    .if_full_n(conv2_out_V_V_full_n),
+    .if_write(conv2_U0_conv2_out_V_V_write),
+    .if_dout(conv2_out_V_V_dout),
+    .if_empty_n(conv2_out_V_V_empty_n),
+    .if_read(pool2_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A pool2_out_V_U(
+fifo_w16_d2_A pool2_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(pool2_U0_out_V_din),
-    .if_full_n(pool2_out_V_full_n),
-    .if_write(pool2_U0_out_V_write),
-    .if_dout(pool2_out_V_dout),
-    .if_empty_n(pool2_out_V_empty_n),
-    .if_read(fc1_U0_in_V_read)
+    .if_din(pool2_U0_out_V_V_din),
+    .if_full_n(pool2_out_V_V_full_n),
+    .if_write(pool2_U0_out_V_V_write),
+    .if_dout(pool2_out_V_V_dout),
+    .if_empty_n(pool2_out_V_V_empty_n),
+    .if_read(fc1_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A fc1_out_V_U(
+fifo_w16_d2_A fc1_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(fc1_U0_out_V_din),
-    .if_full_n(fc1_out_V_full_n),
-    .if_write(fc1_U0_out_V_write),
-    .if_dout(fc1_out_V_dout),
-    .if_empty_n(fc1_out_V_empty_n),
-    .if_read(fc2_U0_in_V_read)
+    .if_din(fc1_U0_out_V_V_din),
+    .if_full_n(fc1_out_V_V_full_n),
+    .if_write(fc1_U0_out_V_V_write),
+    .if_dout(fc1_out_V_V_dout),
+    .if_empty_n(fc1_out_V_V_empty_n),
+    .if_read(fc2_U0_in_V_V_read)
 );
 
-fifo_w32_d2_A fc2_out_V_U(
+fifo_w16_d2_A fc2_out_V_V_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(fc2_U0_out_V_din),
-    .if_full_n(fc2_out_V_full_n),
-    .if_write(fc2_U0_out_V_write),
-    .if_dout(fc2_out_V_dout),
-    .if_empty_n(fc2_out_V_empty_n),
-    .if_read(fc3_U0_in_V_read)
+    .if_din(fc2_U0_out_V_V_din),
+    .if_full_n(fc2_out_V_V_full_n),
+    .if_write(fc2_U0_out_V_V_write),
+    .if_dout(fc2_out_V_V_dout),
+    .if_empty_n(fc2_out_V_V_empty_n),
+    .if_read(fc3_U0_in_V_V_read)
 );
 
 start_for_pool1_U0 start_for_pool1_U0_U(
@@ -476,11 +476,11 @@ assign fc3_U0_start_full_n = 1'b1;
 
 assign fc3_U0_start_write = 1'b0;
 
-assign fc3_out_V_din = fc3_U0_out_V_din;
+assign fc3_out_V_V_din = fc3_U0_out_V_V_din;
 
-assign fc3_out_V_write = fc3_U0_out_V_write;
+assign fc3_out_V_V_write = fc3_U0_out_V_V_write;
 
-assign image_in_V_read = conv1_U0_in_V_read;
+assign image_in_V_V_read = conv1_U0_in_V_V_read;
 
 assign pool1_U0_ap_continue = 1'b1;
 

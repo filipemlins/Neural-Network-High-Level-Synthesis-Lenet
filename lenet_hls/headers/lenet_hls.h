@@ -38,5 +38,7 @@ using namespace std;
 #include "weights_fc2.h"
 #include "weights_fc3.h"
 
+void lenet_hls(hls::stream<float24_t> &image_in, hls::stream<float24_t> &fc3_out);
+//void lenet_hls(hls::stream<float> &image_in, hls::stream<float> &fc3_out);
 
 #endif

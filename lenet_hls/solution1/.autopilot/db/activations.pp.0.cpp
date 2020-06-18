@@ -145,11 +145,11 @@ extern "C" {
 # 8 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "lenet_hls/activations.cpp" 2
-
+# 22 "lenet_hls/activations.cpp"
 # 1 "lenet_hls/headers/activations.h" 1
-# 25 "lenet_hls/headers/activations.h"
+# 26 "lenet_hls/headers/activations.h"
 float relu(float a);
-# 3 "lenet_hls/activations.cpp" 2
+# 23 "lenet_hls/activations.cpp" 2
 
 float relu(float a)
 {

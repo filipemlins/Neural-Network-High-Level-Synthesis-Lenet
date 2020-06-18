@@ -35,8 +35,9 @@ using namespace std;
 
 #define CONV1_BUFFER_SIZE (IMAGE_SIZE*IMAGE_SIZE*CONV1_CHANNELS)
 
-#define CONV2_BUFFER_SIZE (P1_SIZE * P1_SIZE * CONV2_CHANNELS)
+#define CONV2_BUFFER_SIZE (P1_SIZE*P1_SIZE*CONV2_CHANNELS)
 
+/*
 void conv1(hls::stream<float> &conv1_out, hls::stream<float> &in,
 		float weight[CONV1_FILTERS][CONV1_KERNEL_SIZE][CONV1_KERNEL_SIZE][CONV1_CHANNELS],
 		float bias[CONV1_BIAS_SIZE]);
@@ -44,5 +45,17 @@ void conv1(hls::stream<float> &conv1_out, hls::stream<float> &in,
 void conv2(hls::stream<float> &conv2_out, hls::stream<float> &in,
 		float weight[CONV2_FILTERS][CONV2_KERNEL_SIZE][CONV2_KERNEL_SIZE][CONV2_CHANNELS],
 		float bias[CONV2_BIAS_SIZE]);
+
+*/
+
+void conv1(hls::stream<float24_t> &conv1_out, hls::stream<float24_t> &in,
+		float24_t weight[CONV1_FILTERS][CONV1_KERNEL_SIZE][CONV1_KERNEL_SIZE][CONV1_CHANNELS],
+		float24_t bias[CONV1_BIAS_SIZE]);
+
+void conv2(hls::stream<float24_t> &conv2_out, hls::stream<float24_t> &in,
+		float24_t weight[CONV2_FILTERS][CONV2_KERNEL_SIZE][CONV2_KERNEL_SIZE][CONV2_CHANNELS],
+		float24_t bias[CONV2_BIAS_SIZE]);
+
+
 
 #endif

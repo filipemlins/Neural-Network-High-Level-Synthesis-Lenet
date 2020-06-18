@@ -6,26 +6,15 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:18:34.321-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:15:00.457-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:11:15.388-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:07:57.997-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:04:37.763-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:56:08.705-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:55:37.203-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:55:06.911-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:54:08.951-0300"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:53:40.043-0300"/>
-      </csimLog>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file lenet_hls/lenet_hls.cpp" projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:27.898-0300" type="Warning"/>
-        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:40:21" projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:03.315-0300" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] In file included from lenet_hls/lenet_hls.cpp:1:&#xA;lenet_hls/lenet_hls.cpp:25:17: warning: using directive refers to implicitly-defined namespace 'std'&#xA;using namespace std;&#xA;                ^&#xA;1 warning generated." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:03.305-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file lenet_hls/lenet_hls.cpp" projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:24:50.744-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:33:25" projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:23:55.658-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] In file included from lenet_hls/lenet_hls.cpp:1:&#xA;In file included from lenet_hls/lenet_hls.cpp:25:&#xA;lenet_hls/headers/lenet_hls.h:26:17: warning: using directive refers to implicitly-defined namespace 'std'&#xA;using namespace std;&#xA;                ^&#xA;1 warning generated." projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:23:55.655-0300" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

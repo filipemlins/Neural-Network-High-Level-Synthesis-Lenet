@@ -31,8 +31,12 @@ using namespace std;
 #define POOL1_BUFFER_SIZE (A1_SIZE*A1_SIZE)//*A1_CHANNELS
 #define POOL2_BUFFER_SIZE (A2_SIZE*A2_SIZE)
 
-
+/*
 void pool1(hls::stream<float>& out, hls::stream<float>& in);
 void pool2(hls::stream<float>& out, hls::stream<float>& in);
+*/
+
+void pool1(hls::stream<float24_t>& out, hls::stream<float24_t>& in);
+void pool2(hls::stream<float24_t>& out, hls::stream<float24_t>& in);
 
 #endif

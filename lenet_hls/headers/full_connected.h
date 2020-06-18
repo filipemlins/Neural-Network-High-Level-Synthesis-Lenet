@@ -28,7 +28,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 #include "ap_fixed.h"
 #include <stdio.h>
 using namespace std;
+typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
 
+/*
 void fc1(hls::stream<float> &out, hls::stream<float> &in,
 		float weight[FC1_WEIGHTS_H][FC1_WEIGHTS_W],
 		float bias[FC1_BIAS_SIZE]);
@@ -42,5 +44,18 @@ void fc3(hls::stream<float> &out, hls::stream<float> &in,
 		float weight[FC3_WEIGHTS_H][FC3_WEIGHTS_W],
 		float bias[FC3_BIAS_SIZE]);
 
+*/
+void fc1(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC1_WEIGHTS_H][FC1_WEIGHTS_W],
+		float24_t bias[FC1_BIAS_SIZE]);
+
+
+void fc2(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC2_WEIGHTS_H][FC2_WEIGHTS_W],
+		float24_t bias[FC2_BIAS_SIZE]);
+
+void fc3(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
+		float24_t weight[FC3_WEIGHTS_H][FC3_WEIGHTS_W],
+		float24_t bias[FC3_BIAS_SIZE]);
 
 #endif

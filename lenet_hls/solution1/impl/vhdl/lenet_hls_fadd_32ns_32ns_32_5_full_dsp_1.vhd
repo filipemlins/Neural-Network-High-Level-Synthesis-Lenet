@@ -1,5 +1,5 @@
 -- ==============================================================
--- File generated on Wed Jun 17 16:36:43 -03 2020
+-- File generated on Thu Jun 18 10:15:10 -03 2020
 -- Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 -- SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 -- IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity lenet_hls_fadd_32ns_32ns_32_5_full_dsp_1 is
     generic (
-        ID         : integer := 1;
+        ID         : integer := 46;
         NUM_STAGE  : integer := 5;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

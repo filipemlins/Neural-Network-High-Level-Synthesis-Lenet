@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;lenet_hls/pool_layers.cpp&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;lenet_hls/lenet_hls.cpp&apos; ..."/>
 	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from lenet_hls/lenet_hls.cpp:1:
-lenet_hls/lenet_hls.cpp:25:17: warning: using directive refers to implicitly-defined namespace &apos;std&apos;
+In file included from lenet_hls/lenet_hls.cpp:25:
+lenet_hls/headers/lenet_hls.h:26:17: warning: using directive refers to implicitly-defined namespace &apos;std&apos;
 using namespace std;
                 ^
 1 warning generated."/>
-	<Message severity="WARNING" prefix="[HLS 214-111]" key="HLS 214-111" tag="DATAFLOW,SDX_KERNEL" content="Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:40:21"/>
+	<Message severity="WARNING" prefix="[HLS 214-111]" key="HLS 214-111" tag="DATAFLOW,SDX_KERNEL" content="Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:33:25"/>
 	<Message severity="WARNING" prefix="[HLS 200-471]" key="HLS 200-471" tag="DATAFLOW,SDX_KERNEL" content="Dataflow form checks found 1 issue(s) in file lenet_hls/lenet_hls.cpp"/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;lenet_hls/full_connected.cpp&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;lenet_hls/conv_layers.cpp&apos; ..."/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;lenet_hls/activations.cpp&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:04:15 ; elapsed = 00:04:23 . Memory (MB): peak = 441.977 ; gain = 0.117 ; free physical = 6601 ; free virtual = 11415"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:04:15 ; elapsed = 00:04:23 . Memory (MB): peak = 441.977 ; gain = 0.117 ; free physical = 6601 ; free virtual = 11415"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
 </Messages>

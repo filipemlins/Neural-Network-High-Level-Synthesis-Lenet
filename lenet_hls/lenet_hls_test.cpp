@@ -21,48 +21,66 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
 #include "headers/lenet_hls_test.h"
 
-#define NUM_IMAGES 100
+#define NUM_IMAGES 10000
 
 
-void lenet_hls(hls::stream<float> &image_in, hls::stream<float> &fc3_out);
 
 int main()
 {
 
 
-	//	hls::stream<float24_t> conv1_out("conv1_out");
-	//	float24_t conv1_layer_out[A1_SIZE*A1_SIZE*A1_CHANNELS];
+/*
+		hls::stream<float24_t> conv1_out("conv1_out");
+		int size_output = A1_SIZE*A1_SIZE*A1_CHANNELS;
+		float24_t conv1_layer_out[size_output];
 
 
-	//	hls::stream<float24_t> pool1_out("pool1_out");
-	//	float24_t pool1_out_layer[P1_SIZE*P1_SIZE*P1_CHANNELS];
-	//	int size_output = P1_SIZE*P1_SIZE*P1_CHANNELS;
+		hls::stream<float24_t> pool1_out("pool1_out");
+		float24_t pool1_out_layer[P1_SIZE*P1_SIZE*P1_CHANNELS];
+		int size_output = P1_SIZE*P1_SIZE*P1_CHANNELS;
 
 
-	//	hls::stream<float24_t> conv2_out("conv2_out");
-	//	float24_t conv2_layer_out[A2_SIZE*A2_SIZE*A2_CHANNELS];
-	//	int size_output = A2_SIZE*A2_SIZE*A2_CHANNELS;
+		hls::stream<float24_t> conv2_out("conv2_out");
+		float24_t conv2_layer_out[A2_SIZE*A2_SIZE*A2_CHANNELS];
+		int size_output = A2_SIZE*A2_SIZE*A2_CHANNELS;
 
 
-	//	hls::stream<float24_t> pool2_out("pool2_out");
-	//	float24_t pool2_out_layer[P2_SIZE*P2_SIZE*P2_CHANNELS];
-	//	int size_output = P2_SIZE*P2_SIZE*P2_CHANNELS;
+		hls::stream<float24_t> pool2_out("pool2_out");
+		float24_t pool2_out_layer[P2_SIZE*P2_SIZE*P2_CHANNELS];
+		int size_output = P2_SIZE*P2_SIZE*P2_CHANNELS;
 
-	//	hls::stream<float24_t> fc1_out("fc1_out");
-	//	int size_output = FC1_OUT_SIZE;
-	//	float24_t fc1_out_layer[size_output];
+		hls::stream<float24_t> fc1_out("fc1_out");
+		int size_output = FC1_OUT_SIZE;
+		float24_t fc1_out_layer[size_output];
 
-	//	hls::stream<float24_t> fc2_out("fc2_out");
-	//	int size_output = FC2_OUT_SIZE;
-	//	float24_t fc2_out_layer[size_output];
+		hls::stream<float24_t> fc2_out("fc2_out");
+		int size_output = FC2_OUT_SIZE;
+		float24_t fc2_out_layer[size_output];
+*/
+/*
 
 	hls::stream<float> fc3_out("fc3_out");
 	int size_output = FC3_ACT_SIZE;
 	float fc3_out_layer[size_output];
+	float image[32*32*1];
+	float sti_val;
+	hls::stream<float> image_input("image_input");
+	float max_val = fc3_out_layer[0];
 
 
+*/
 
-	int i,j,k;
+	hls::stream<float24_t> fc3_out("fc3_out");
+	int size_output = FC3_ACT_SIZE;
+	float24_t fc3_out_layer[size_output];
+	float24_t image[32*32*1];
+	float24_t sti_val;
+	hls::stream<float24_t> image_input("image_input");
+	float24_t max_val = fc3_out_layer[0];
+
+
+	int i,j,k, max = 0;
+
 
 	// read file with test results and store in array
 	int fc_layer3_ref[10000];
@@ -84,8 +102,7 @@ int main()
 	ifs.close();
 
 
-	float image[32*32*1];
-	float sti_val;
+
 	string stimulus_source;
 
 	ifstream myfile ("../../../ref/filenames.out");
@@ -99,7 +116,6 @@ int main()
 	float wrong_val = 0, corrected_val = 0;
 
 	for (int j = 0; j < NUM_IMAGES; j++) {
-		hls::stream<float> image_input("image_input");
 
 		getline(myfile, stimulus_source);
 
@@ -149,10 +165,12 @@ int main()
 
 
 		// one hot enconding
-		float max_val = fc3_out_layer[0];
-		int max = 0;
 
-		for (i = 0; i < size_output; i++)
+		//set one hot enconding values.
+		max_val = fc3_out_layer[0];
+		max = 0;
+
+		for (i = 1; i < size_output; i++)
 		{
 			//cout << fc3_out_layer[i] << " " << i << endl;
 			if (fc3_out_layer[i] > max_val) {

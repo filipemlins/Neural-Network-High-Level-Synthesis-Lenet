@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Wed Jun 17 16:36:36 -03 2020
+// File generated on Thu Jun 18 10:15:05 -03 2020
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -9,7 +9,7 @@
 module conv1_conv1_layer_weights_s_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 12;
 parameter AWIDTH = 7;
 parameter MEM_SIZE = 128;
 
@@ -46,7 +46,7 @@ module conv1_conv1_layer_weights_s(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd12;
 parameter AddressRange = 32'd128;
 parameter AddressWidth = 32'd7;
 input reset;

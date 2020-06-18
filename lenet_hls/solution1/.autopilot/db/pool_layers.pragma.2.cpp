@@ -145,11 +145,11 @@ extern "C" {
 # 8 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "lenet_hls/pool_layers.cpp" 2
+# 22 "lenet_hls/pool_layers.cpp"
 # 1 "lenet_hls/headers/pool_layers.h" 1
-
-
+# 25 "lenet_hls/headers/pool_layers.h"
 # 1 "lenet_hls/headers/defines.h" 1
-# 23 "lenet_hls/headers/defines.h"
+# 26 "lenet_hls/headers/defines.h"
 # 1 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_fixed.h" 1
 # 54 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_fixed.h"
 # 1 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_common.h" 1
@@ -6427,13 +6427,13 @@ inline bool operator!=(
 
 }
 # 381 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_fixed.h" 2
-# 24 "lenet_hls/headers/defines.h" 2
+# 27 "lenet_hls/headers/defines.h" 2
 
 
 
 
-typedef ap_fixed<16, 5> float24_t;
-# 4 "lenet_hls/headers/pool_layers.h" 2
+typedef ap_fixed<16, 4> float24_t;
+# 26 "lenet_hls/headers/pool_layers.h" 2
 # 1 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_video.h" 1
 # 48 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_video.h"
 # 1 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls/hls_axi_io.h" 1
@@ -32656,7 +32656,7 @@ _ssdm_op_SpecDataflowPipeline(-1, 0, "");
 
 }
 # 70 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_video.h" 2
-# 5 "lenet_hls/headers/pool_layers.h" 2
+# 27 "lenet_hls/headers/pool_layers.h" 2
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 29 "/usr/include/stdio.h" 3 4
@@ -33487,25 +33487,19 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 extern void funlockfile (FILE *__stream) throw ();
 # 942 "/usr/include/stdio.h" 3 4
 }
-# 7 "lenet_hls/headers/pool_layers.h" 2
+# 29 "lenet_hls/headers/pool_layers.h" 2
 using namespace std;
-
-
-
-
-
-void pool1(hls::stream<float>& out, hls::stream<float>& in);
-void pool2(hls::stream<float>& out, hls::stream<float>& in);
-# 2 "lenet_hls/pool_layers.cpp" 2
-
-
-
-void pool1(hls::stream<float>& out, hls::stream<float>& in) {
+# 39 "lenet_hls/headers/pool_layers.h"
+void pool1(hls::stream<float24_t>& out, hls::stream<float24_t>& in);
+void pool2(hls::stream<float24_t>& out, hls::stream<float24_t>& in);
+# 23 "lenet_hls/pool_layers.cpp" 2
+# 123 "lenet_hls/pool_layers.cpp"
+void pool1(hls::stream<float24_t>& out, hls::stream<float24_t>& in) {
 
  int i, j, k, l, m;
  int array_access = 0;
- float value = 0;
- hls::LineBuffer<(29*29), 1, float> pool_buff;
+ float24_t value = 0;
+ hls::LineBuffer<(29*29), 1, float24_t> pool_buff;
 
 
 
@@ -33547,13 +33541,13 @@ void pool1(hls::stream<float>& out, hls::stream<float>& in) {
 }
 
 
-void pool2(hls::stream<float>& out, hls::stream<float>& in) {
+void pool2(hls::stream<float24_t>& out, hls::stream<float24_t>& in) {
 
  int i, j, k, l, m;
  int array_access = 0;
- float value = 0;
+ float24_t value = 0;
 
- float pool_buff[(13*13)];
+ float24_t pool_buff[(13*13)];
 
 
 
