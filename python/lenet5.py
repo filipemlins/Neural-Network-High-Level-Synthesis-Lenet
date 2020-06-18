@@ -193,12 +193,17 @@ filename2 = "tmp"
 dir_name='../lenet_hls/headers/'
 
 a_file = open(os.path.join(dir_name, filename2 + ".h"), "w")
+lic_file = open("license.txt")
+for line in lic_file:
+        a_file.write(line) 
+lic_file.close()
 
-a_file.write("#ifndef EXP_WIDTH\n")
+a_file.write("#ifndef WEIGHTS_CONV1_H\n")
+a_file.write("#define WEIGHTS_CONV1_H\n")
+
 a_file.write("#include \"ap_fixed.h\" \n")
 a_file.write("#include \"defines.h\" \n")
-a_file.write("typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;\n")
-a_file.write("#endif\n\n")
+
 
 
 
@@ -221,18 +226,25 @@ with open(os.path.join(dir_name, filename2 + ".h"), "r")as infile, \
     data = infile.read()
     data = data.replace(",\n}", "}")
     outfile.write(data)
+    outfile.write("#endif\n\n")
     
-infile.close()
-outfile.close()
+
 
 
 a_file = open(os.path.join(dir_name, filename2 + ".h"), "w")
 
-a_file.write("#ifndef EXP_WIDTH\n")
+lic_file = open("license.txt")
+for line in lic_file:
+        a_file.write(line) 
+lic_file.close()
+
+a_file.write("#ifndef WEIGHTS_CONV2_H\n")
+a_file.write("#define WEIGHTS_CONV2_H\n")
+
+
 a_file.write("#include \"ap_fixed.h\" \n")
 a_file.write("#include \"defines.h\" \n")
-a_file.write("typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;\n")
-a_file.write("#endif\n\n")
+
 
 
 a_file.write(var_type + "conv2_layer_bias[16] = {")
@@ -255,19 +267,23 @@ with open(os.path.join(dir_name, filename2 + ".h"), "r")as infile, \
     data = infile.read()
     data = data.replace(",\n}", "}")
     outfile.write(data)
-    
-infile.close()
-outfile.close()
+    outfile.write("#endif\n\n")
     
 
 
 a_file = open(os.path.join(dir_name, filename2 + ".h"), "w")
 
-a_file.write("#ifndef EXP_WIDTH\n")
+lic_file = open("license.txt")
+for line in lic_file:
+        a_file.write(line) 
+lic_file.close()
+
+a_file.write("#ifndef WEIGHTS_FC1_H\n")
+a_file.write("#define WEIGHTS_FC1_H\n")
+
 a_file.write("#include \"ap_fixed.h\" \n")
 a_file.write("#include \"defines.h\" \n")
-a_file.write("typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;\n")
-a_file.write("#endif\n\n")
+
 
 
 a_file.write(var_type + "fc1_layer_bias[120] = {")
@@ -288,9 +304,7 @@ with open(os.path.join(dir_name, filename2 + ".h"), "r")as infile, \
     data = infile.read()
     data = data.replace(",\n}", "}")
     outfile.write(data)
-    
-infile.close()
-outfile.close()
+    outfile.write("#endif\n\n")    
     
 
 
@@ -298,11 +312,18 @@ outfile.close()
 
 a_file = open(os.path.join(dir_name, filename2 + ".h"), "w")
 
-a_file.write("#ifndef EXP_WIDTH\n")
+lic_file = open("license.txt")
+for line in lic_file:
+        a_file.write(line) 
+lic_file.close()
+
+a_file.write("#ifndef WEIGHTS_FC2_H\n")
+a_file.write("#define WEIGHTS_FC2_H\n")
+
+
 a_file.write("#include \"ap_fixed.h\" \n")
 a_file.write("#include \"defines.h\" \n")
-a_file.write("typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;\n")
-a_file.write("#endif\n\n")
+
 
 
 a_file.write(var_type + "fc2_layer_bias[84] = {")
@@ -323,19 +344,25 @@ with open(os.path.join(dir_name, filename2 + ".h"), "r")as infile, \
     data = infile.read()
     data = data.replace(",\n}", "}")
     outfile.write(data)
-    
-infile.close()
-outfile.close()
+    outfile.write("#endif\n\n")    
+
     
 
 
 a_file = open(os.path.join(dir_name, filename2 + ".h"), "w")
 
-a_file.write("#ifndef EXP_WIDTH\n")
+lic_file = open("license.txt")
+for line in lic_file:
+        a_file.write(line) 
+lic_file.close()
+
+a_file.write("#ifndef WEIGHTS_FC3_H\n")
+a_file.write("#define WEIGHTS_FC3_H\n")
+
 a_file.write("#include \"ap_fixed.h\" \n")
 a_file.write("#include \"defines.h\" \n")
-a_file.write("typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;\n")
-a_file.write("#endif\n\n")
+
+
 
 
 a_file.write(var_type + "fc3_layer_bias[10] = {")
@@ -357,10 +384,8 @@ with open(os.path.join(dir_name, filename2 + ".h"), "r")as infile, \
     data = infile.read()
     data = data.replace(",\n}", "}")
     outfile.write(data)
+    outfile.write("#endif\n\n") 
     
-infile.close()
-outfile.close()
-
 os.remove(os.path.join(dir_name, filename2 + ".h"))
    
 
