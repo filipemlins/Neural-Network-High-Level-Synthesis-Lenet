@@ -1,5 +1,5 @@
-obj/lenet_hls.o: ../../../lenet_hls.cpp \
- ../../../headers/weights_conv1layer.h \
+obj/lenet_hls.o: ../../../lenet_hls.cpp ../../../headers/lenet_hls.h \
+ ../../../headers/defines.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_fixed.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_common.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_decl.h \
@@ -19,10 +19,7 @@ obj/lenet_hls.o: ../../../lenet_hls.cpp \
  /tools/Xilinx/Vivado/2018.3/include/ap_int_special.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_fixed_ref.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_fixed_special.h \
- ../../../headers/defines.h ../../../headers/weights_conv2layer.h \
- ../../../headers/weights_fc1.h ../../../headers/weights_fc2.h \
- ../../../headers/weights_fc3.h ../../../headers/defines.h \
- ../../../headers/activations.h \
+ ../../../headers/conv_layers.h ../../../headers/activations.h \
  /tools/Xilinx/Vivado/2018.3/include/hls_video.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_axi_io.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_axi_sdata.h \
@@ -74,4 +71,8 @@ obj/lenet_hls.o: ../../../lenet_hls.cpp \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_hough.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_harris.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_haar.h \
- /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_stereobm.h
+ /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_stereobm.h \
+ ../../../headers/pool_layers.h ../../../headers/full_connected.h \
+ ../../../headers/weights_conv1layer.h \
+ ../../../headers/weights_conv2layer.h ../../../headers/weights_fc1.h \
+ ../../../headers/weights_fc2.h ../../../headers/weights_fc3.h

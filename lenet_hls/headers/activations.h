@@ -19,34 +19,11 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#ifndef EXP_WIDTH
-
-#include "ap_fixed.h"
-
-#define EXP_WIDTH	16
-#define INT_WIDTH	4
-
-typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
-
-#endif
+#ifndef ACTIVATIONS_H
+#define ACTIVATIONS_H
 
 
-#ifndef __ACTIVATIONS_H
-#define __ACTIVATIONS_H
-
-
-typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
-
-
-float relu(float a)
-{
-	return a > (float)0 ? a : (float)0;
-}
-
-
-
-
-
+float relu(float a);
 
 
 #endif

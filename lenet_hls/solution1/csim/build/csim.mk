@@ -1,5 +1,5 @@
 # ==============================================================
-# File generated on Wed Jun 17 16:18:26 -03 2020
+# File generated on Wed Jun 17 21:21:50 -03 2020
 # Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -23,7 +23,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../lenet_hls_test.cpp ../../../lenet_hls.cpp
+HLS_SOURCES = ../../../lenet_hls_test.cpp ../../../activations.cpp ../../../conv_layers.cpp ../../../full_connected.cpp ../../../lenet_hls.cpp ../../../pool_layers.cpp
 
 TARGET := csim.exe
 
@@ -64,6 +64,7 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
+IFLAG += -Wno-unknown-pragmas 
 IFLAG += -g
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += 
@@ -79,12 +80,36 @@ all: $(TARGET)
 
 $(ObjDir)/lenet_hls_test.o: ../../../lenet_hls_test.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../lenet_hls_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/lenet_hls_test.d
+
+$(ObjDir)/activations.o: ../../../activations.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../activations.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/activations.d
+
+$(ObjDir)/conv_layers.o: ../../../conv_layers.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv_layers.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/conv_layers.d
+
+$(ObjDir)/full_connected.o: ../../../full_connected.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../full_connected.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/full_connected.d
 
 $(ObjDir)/lenet_hls.o: ../../../lenet_hls.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../lenet_hls.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/lenet_hls.d
+
+$(ObjDir)/pool_layers.o: ../../../pool_layers.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../pool_layers.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/pool_layers.d

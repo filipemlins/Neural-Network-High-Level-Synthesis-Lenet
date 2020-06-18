@@ -20,8 +20,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 */
 
 
+#ifndef DEFINES_H
+#define DEFINES_H
+
+#include "ap_fixed.h"
+
 #define EXP_WIDTH	16
 #define INT_WIDTH	5
+
+typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
+
 
 #define IMAGE_SIZE 			32
 #define IMAGE_CHANNELS		1
@@ -80,4 +88,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 #define FC3_ACT_SIZE		10
 
 
-
+#endif

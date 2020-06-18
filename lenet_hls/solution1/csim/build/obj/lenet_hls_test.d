@@ -1,5 +1,5 @@
 obj/lenet_hls_test.o: ../../../lenet_hls_test.cpp \
- ../../../headers/defines.h \
+ ../../../headers/lenet_hls_test.h \
  /tools/Xilinx/Vivado/2018.3/include/hls_video.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_axi_io.h \
  /tools/Xilinx/Vivado/2018.3/include/ap_axi_sdata.h \
@@ -70,4 +70,5 @@ obj/lenet_hls_test.o: ../../../lenet_hls_test.cpp \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_hough.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_harris.h \
  /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_haar.h \
- /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_stereobm.h
+ /tools/Xilinx/Vivado/2018.3/include/hls/hls_video_stereobm.h \
+ ../../../headers/defines.h

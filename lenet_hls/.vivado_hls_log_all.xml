@@ -3,70 +3,34 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:18:34.321-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:15:00.457-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:11:15.388-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:07:57.997-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T21:04:37.763-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:56:08.705-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:55:37.203-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:55:06.911-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:54:08.951-0300"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:53:40.043-0300"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[433]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:29:13.871-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[432]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.769-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[431]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.713-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[430]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.660-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[429]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.602-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[428]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.546-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[427]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.493-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[426]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.438-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[425]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.382-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[424]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.327-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[423]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.270-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[422]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.212-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[421]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.158-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[420]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.102-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[419]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:43.044-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[418]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.986-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[417]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.927-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[416]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.872-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[415]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.817-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[414]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.763-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[413]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.709-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[412]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.652-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[411]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.597-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[410]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.542-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[409]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.488-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[408]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.437-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[407]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.386-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[406]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.335-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[405]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.285-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[404]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.232-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[403]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.180-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[402]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.127-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[401]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.075-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[400]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:42.023-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[399]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.973-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[398]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.921-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[397]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.850-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[396]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.800-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[395]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.747-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[394]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.697-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[393]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.646-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[392]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.596-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[391]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.546-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[390]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.496-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[389]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.446-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[388]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.395-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[387]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.341-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[386]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.288-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[385]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.238-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[384]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.187-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[383]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.135-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[382]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.079-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[381]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:41.019-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[380]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:40.967-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[379]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:40.915-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[378]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:40.861-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[377]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:40.806-0300" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[376]' (lenet_hls/lenet_hls.cpp:35)." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T16:26:40.752-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file lenet_hls/lenet_hls.cpp" projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:27.898-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:40:21" projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:03.315-0300" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] In file included from lenet_hls/lenet_hls.cpp:1:&#xA;lenet_hls/lenet_hls.cpp:25:17: warning: using directive refers to implicitly-defined namespace 'std'&#xA;using namespace std;&#xA;                ^&#xA;1 warning generated." projectName="lenet_hls" solutionName="solution1" date="2020-06-17T20:50:03.305-0300" type="Warning"/>
       </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

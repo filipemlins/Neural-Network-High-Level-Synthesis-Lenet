@@ -5,14 +5,16 @@
     <downStreamTool>
         <DownStreamTool name=""/>
     </downStreamTool>
+    <clockList>
+        <clock default="false" name="default" period="10"/>
+    </clockList>
     <config>
-        <config_compile blackbox=""/>
         <schedule model="lenet_hls"/>
+        <config_compile blackbox="" no_signed_zeros="0" unsafe_math_optimizations="0"/>
     </config>
     <UIConfigurations>
-        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
+        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="true" showDetailDesignViewer="false">
             <Platform>xilinx/aartix7/aartix7</Platform>
-            <Platform>xilinx/aartix7/aartix7_fpv6</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -41,7 +43,7 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="false" rtlCombo="verilog">
+    <ExportDesign askAgain="true" evaluate="false" flow="true" flowChoice="impl" formatName="ip_catalog" rtl="verilog" rtlButton="true" rtlCombo="vhdl">
         <Format formatName="ip_catalog"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
@@ -66,10 +68,7 @@
     </targetInfo>
     <libraryList>
         <library name="DefaultPlatform" value="xilinx/aartix7/aartix7"/>
-        <library name="DefaultPlatform" value="xilinx/aartix7/aartix7_fpv6"/>
+        <library value="xilinx/aartix7/aartix7_fpv6" name="DefaultPlatform"/>
     </libraryList>
-    <clockList>
-        <clock default="false" name="default" period="10"/>
-    </clockList>
 </solution>
 

@@ -42,9 +42,24 @@
 			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>source/activations.cpp</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/activations.cpp</location>
+		</link>
+		<link>
 			<name>source/activations.h</name>
 			<type>1</type>
 			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/activations.h</location>
+		</link>
+		<link>
+			<name>source/conv_layers.cpp</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/conv_layers.cpp</location>
+		</link>
+		<link>
+			<name>source/conv_layers.h</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/conv_layers.h</location>
 		</link>
 		<link>
 			<name>source/defines.h</name>
@@ -52,9 +67,34 @@
 			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/defines.h</location>
 		</link>
 		<link>
+			<name>source/full_connected.cpp</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/full_connected.cpp</location>
+		</link>
+		<link>
+			<name>source/full_connected.h</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/full_connected.h</location>
+		</link>
+		<link>
 			<name>source/lenet_hls.cpp</name>
 			<type>1</type>
 			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/lenet_hls.cpp</location>
+		</link>
+		<link>
+			<name>source/lenet_hls.h</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/lenet_hls.h</location>
+		</link>
+		<link>
+			<name>source/pool_layers.cpp</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/pool_layers.cpp</location>
+		</link>
+		<link>
+			<name>source/pool_layers.h</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/pool_layers.h</location>
 		</link>
 		<link>
 			<name>source/weights_conv1layer.h</name>
@@ -85,6 +125,11 @@
 			<name>testbench/lenet_hls_test.cpp</name>
 			<type>1</type>
 			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/lenet_hls_test.cpp</location>
+		</link>
+		<link>
+			<name>testbench/lenet_hls_test.h</name>
+			<type>1</type>
+			<location>/home/filipe/MEGA/GitHub/Neural-Network-High-Level-Synthesis-Lenet/lenet_hls/headers/lenet_hls_test.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

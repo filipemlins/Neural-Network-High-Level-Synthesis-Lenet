@@ -19,24 +19,10 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "headers/defines.h"
-#include <hls_video.h>
-#include <fstream>
-#include <string>
-
-using namespace std;
-
-
-#include "ap_fixed.h"
-
+#include "headers/lenet_hls_test.h"
 
 #define NUM_IMAGES 100
 
-//typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
 
 void lenet_hls(hls::stream<float> &image_in, hls::stream<float> &fc3_out);
 
