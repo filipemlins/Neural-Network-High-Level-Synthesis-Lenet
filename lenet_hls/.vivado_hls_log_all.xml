@@ -11,11 +11,7 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file lenet_hls/lenet_hls.cpp" projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:24:50.744-0300" type="Warning"/>
-        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: lenet_hls/lenet_hls.cpp:33:25" projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:23:55.658-0300" type="Warning"/>
-        <logs message="WARNING: [HLS 200-40] In file included from lenet_hls/lenet_hls.cpp:1:&#xA;In file included from lenet_hls/lenet_hls.cpp:25:&#xA;lenet_hls/headers/lenet_hls.h:26:17: warning: using directive refers to implicitly-defined namespace 'std'&#xA;using namespace std;&#xA;                ^&#xA;1 warning generated." projectName="lenet_hls" solutionName="solution1" date="2020-06-18T10:23:55.655-0300" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

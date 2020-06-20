@@ -77,9 +77,10 @@
       "impl\/vhdl\/lenet_hls_fdiv_32ns_32ns_32_16_1.vhd",
       "impl\/vhdl\/lenet_hls_fexp_32ns_32ns_32_9_full_dsp_1.vhd",
       "impl\/vhdl\/lenet_hls_fpext_32ns_64_1_1.vhd",
-      "impl\/vhdl\/lenet_hls_mac_muladd_12s_16s_28ns_28_1_1.vhd",
-      "impl\/vhdl\/lenet_hls_mac_muladd_16s_11s_28ns_28_1_1.vhd",
-      "impl\/vhdl\/lenet_hls_mac_muladd_16s_12s_28ns_28_1_1.vhd",
+      "impl\/vhdl\/lenet_hls_mac_muladd_11s_16s_27ns_27_1_1.vhd",
+      "impl\/vhdl\/lenet_hls_mac_muladd_16s_10s_27ns_27_1_1.vhd",
+      "impl\/vhdl\/lenet_hls_mac_muladd_16s_11s_27ns_27_1_1.vhd",
+      "impl\/vhdl\/lenet_hls_mac_muladd_16s_12s_27ns_27_1_1.vhd",
       "impl\/vhdl\/lenet_hls_mux_102410_16_1_1.vhd",
       "impl\/vhdl\/pool1.vhd",
       "impl\/vhdl\/pool2.vhd",
@@ -130,9 +131,10 @@
       "impl\/verilog\/lenet_hls_fdiv_32ns_32ns_32_16_1.v",
       "impl\/verilog\/lenet_hls_fexp_32ns_32ns_32_9_full_dsp_1.v",
       "impl\/verilog\/lenet_hls_fpext_32ns_64_1_1.v",
-      "impl\/verilog\/lenet_hls_mac_muladd_12s_16s_28ns_28_1_1.v",
-      "impl\/verilog\/lenet_hls_mac_muladd_16s_11s_28ns_28_1_1.v",
-      "impl\/verilog\/lenet_hls_mac_muladd_16s_12s_28ns_28_1_1.v",
+      "impl\/verilog\/lenet_hls_mac_muladd_11s_16s_27ns_27_1_1.v",
+      "impl\/verilog\/lenet_hls_mac_muladd_16s_10s_27ns_27_1_1.v",
+      "impl\/verilog\/lenet_hls_mac_muladd_16s_11s_27ns_27_1_1.v",
+      "impl\/verilog\/lenet_hls_mac_muladd_16s_12s_27ns_27_1_1.v",
       "impl\/verilog\/lenet_hls_mux_102410_16_1_1.v",
       "impl\/verilog\/pool1.v",
       "impl\/verilog\/pool2.v",
@@ -213,7 +215,7 @@
       "fifo_type": "write",
       "ctype": {
         "WR_DATA": {
-          "Type": "real fixed signed 12",
+          "Type": "real fixed signed 11",
           "Width": "16"
         },
         "FULL_N": {"Type": "bool"},
@@ -226,7 +228,7 @@
       "fifo_type": "read",
       "ctype": {
         "RD_DATA": {
-          "Type": "real fixed signed 12",
+          "Type": "real fixed signed 11",
           "Width": "16"
         },
         "EMPTY_N": {"Type": "bool"},
@@ -414,8 +416,8 @@
         "Area": {
           "BRAM_18K": "1",
           "DSP48E": "1",
-          "FF": "33618",
-          "LUT": "21397"
+          "FF": "33617",
+          "LUT": "21396"
         }
       },
       "pool1": {
@@ -551,8 +553,8 @@
         "Area": {
           "BRAM_18K": "3",
           "DSP48E": "1",
-          "FF": "878",
-          "LUT": "2406"
+          "FF": "876",
+          "LUT": "2405"
         }
       },
       "pool2": {
@@ -672,9 +674,9 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "217",
+          "BRAM_18K": "209",
           "DSP48E": "1",
-          "FF": "814",
+          "FF": "812",
           "LUT": "2340"
         }
       },
@@ -718,8 +720,8 @@
         "Area": {
           "BRAM_18K": "12",
           "DSP48E": "1",
-          "FF": "798",
-          "LUT": "2201"
+          "FF": "797",
+          "LUT": "2200"
         }
       },
       "fc3": {
@@ -769,7 +771,7 @@
         "Area": {
           "BRAM_18K": "1",
           "DSP48E": "10",
-          "FF": "2290",
+          "FF": "2287",
           "LUT": "5258"
         }
       },
@@ -790,10 +792,10 @@
           "Estimate": "9.634"
         },
         "Area": {
-          "BRAM_18K": "235",
+          "BRAM_18K": "227",
           "DSP48E": "14",
-          "FF": "51611",
-          "LUT": "36820"
+          "FF": "51602",
+          "LUT": "36817"
         }
       }
     }
@@ -808,7 +810,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2020-06-18 10:15:10 -03",
+    "Time": "2020-06-20 14:10:53 -03",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }

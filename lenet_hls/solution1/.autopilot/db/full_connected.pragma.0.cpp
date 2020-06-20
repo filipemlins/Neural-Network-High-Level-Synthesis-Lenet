@@ -32658,7 +32658,7 @@ _ssdm_op_SpecDataflowPipeline(-1, 0, "");
 # 26 "lenet_hls/headers/full_connected.h" 2
 # 1 "lenet_hls/headers/defines.h" 1
 # 31 "lenet_hls/headers/defines.h"
-typedef ap_fixed<16, 4> float24_t;
+typedef ap_fixed<16, 5> float24_t;
 # 27 "lenet_hls/headers/full_connected.h" 2
 # 1 "lenet_hls/headers/activations.h" 1
 # 26 "lenet_hls/headers/activations.h"
@@ -33496,7 +33496,7 @@ extern void funlockfile (FILE *__stream) throw ();
 }
 # 30 "lenet_hls/headers/full_connected.h" 2
 using namespace std;
-typedef ap_fixed<16, 4> float24_t;
+typedef ap_fixed<16, 5> float24_t;
 # 48 "lenet_hls/headers/full_connected.h"
 void fc1(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
   float24_t weight[576][120],

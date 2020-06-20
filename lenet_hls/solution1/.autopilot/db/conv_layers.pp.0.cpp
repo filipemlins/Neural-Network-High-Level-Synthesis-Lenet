@@ -6432,7 +6432,7 @@ inline bool operator!=(
 
 
 
-typedef ap_fixed<16, 4> float24_t;
+typedef ap_fixed<16, 5> float24_t;
 # 27 "lenet_hls/headers/conv_layers.h" 2
 # 1 "lenet_hls/headers/activations.h" 1
 # 26 "lenet_hls/headers/activations.h"

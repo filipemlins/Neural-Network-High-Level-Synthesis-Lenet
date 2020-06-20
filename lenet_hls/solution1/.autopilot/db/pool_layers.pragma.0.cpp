@@ -6432,7 +6432,7 @@ inline bool operator!=(
 
 
 
-typedef ap_fixed<16, 4> float24_t;
+typedef ap_fixed<16, 5> float24_t;
 # 26 "lenet_hls/headers/pool_layers.h" 2
 # 1 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_video.h" 1
 # 48 "/tools/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_video.h"

@@ -181,13 +181,15 @@ int main()
 
 		cout << max << " " << fc_layer3_ref[j] << endl;
 		if(max == fc_layer3_ref[j]){
-			corrected_val++;}
+			corrected_val++;
+		}
 		else{
 			wrong_val++;
 		}
 	}
-	cout << "corrected values: " << corrected_val/NUM_IMAGES << endl;
-	cout << "wrong values: " << wrong_val/NUM_IMAGES << endl;
+
+	cout << "corrected values: " << corrected_val << " percentage: " << corrected_val/NUM_IMAGES << endl;
+	cout << "wrong values: " << wrong_val << " percentage: " << wrong_val/NUM_IMAGES << endl;
 
 	return 0;
 

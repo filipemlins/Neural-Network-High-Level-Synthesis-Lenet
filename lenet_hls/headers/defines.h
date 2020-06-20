@@ -26,7 +26,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 #include "ap_fixed.h"
 
 #define EXP_WIDTH	16
-#define INT_WIDTH	4
+#define INT_WIDTH	8
 
 typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
 

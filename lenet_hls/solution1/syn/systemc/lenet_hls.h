@@ -18,7 +18,7 @@
 #include "fc1.h"
 #include "fc2.h"
 #include "fc3.h"
-#include "fifo_w32_d2_A.h"
+#include "fifo_w16_d2_A.h"
 #include "start_for_pool1_U0.h"
 #include "start_for_conv2_U0.h"
 #include "start_for_pool2_U0.h"
@@ -30,12 +30,12 @@ namespace ap_rtl {
 
 struct lenet_hls : public sc_module {
     // Port declarations 12
-    sc_in< sc_lv<32> > image_in_V_dout;
-    sc_in< sc_logic > image_in_V_empty_n;
-    sc_out< sc_logic > image_in_V_read;
-    sc_out< sc_lv<32> > fc3_out_V_din;
-    sc_in< sc_logic > fc3_out_V_full_n;
-    sc_out< sc_logic > fc3_out_V_write;
+    sc_in< sc_lv<16> > image_in_V_V_dout;
+    sc_in< sc_logic > image_in_V_V_empty_n;
+    sc_out< sc_logic > image_in_V_V_read;
+    sc_out< sc_lv<16> > fc3_out_V_V_din;
+    sc_in< sc_logic > fc3_out_V_V_full_n;
+    sc_out< sc_logic > fc3_out_V_V_write;
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst;
     sc_in< sc_logic > ap_start;
@@ -62,12 +62,12 @@ struct lenet_hls : public sc_module {
     fc1* fc1_U0;
     fc2* fc2_U0;
     fc3* fc3_U0;
-    fifo_w32_d2_A* conv1_out_V_U;
-    fifo_w32_d2_A* pool1_out_V_U;
-    fifo_w32_d2_A* conv2_out_V_U;
-    fifo_w32_d2_A* pool2_out_V_U;
-    fifo_w32_d2_A* fc1_out_V_U;
-    fifo_w32_d2_A* fc2_out_V_U;
+    fifo_w16_d2_A* conv1_out_V_V_U;
+    fifo_w16_d2_A* pool1_out_V_V_U;
+    fifo_w16_d2_A* conv2_out_V_V_U;
+    fifo_w16_d2_A* pool2_out_V_V_U;
+    fifo_w16_d2_A* fc1_out_V_V_U;
+    fifo_w16_d2_A* fc2_out_V_V_U;
     start_for_pool1_U0* start_for_pool1_U0_U;
     start_for_conv2_U0* start_for_conv2_U0_U;
     start_for_pool2_U0* start_for_pool2_U0_U;
@@ -81,9 +81,9 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > conv1_U0_ap_ready;
     sc_signal< sc_logic > conv1_U0_start_out;
     sc_signal< sc_logic > conv1_U0_start_write;
-    sc_signal< sc_lv<32> > conv1_U0_conv1_out_V_din;
-    sc_signal< sc_logic > conv1_U0_conv1_out_V_write;
-    sc_signal< sc_logic > conv1_U0_in_V_read;
+    sc_signal< sc_lv<16> > conv1_U0_conv1_out_V_V_din;
+    sc_signal< sc_logic > conv1_U0_conv1_out_V_V_write;
+    sc_signal< sc_logic > conv1_U0_in_V_V_read;
     sc_signal< sc_logic > pool1_U0_ap_start;
     sc_signal< sc_logic > pool1_U0_ap_done;
     sc_signal< sc_logic > pool1_U0_ap_continue;
@@ -91,9 +91,9 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > pool1_U0_ap_ready;
     sc_signal< sc_logic > pool1_U0_start_out;
     sc_signal< sc_logic > pool1_U0_start_write;
-    sc_signal< sc_lv<32> > pool1_U0_out_V_din;
-    sc_signal< sc_logic > pool1_U0_out_V_write;
-    sc_signal< sc_logic > pool1_U0_in_V_read;
+    sc_signal< sc_lv<16> > pool1_U0_out_V_V_din;
+    sc_signal< sc_logic > pool1_U0_out_V_V_write;
+    sc_signal< sc_logic > pool1_U0_in_V_V_read;
     sc_signal< sc_logic > conv2_U0_ap_start;
     sc_signal< sc_logic > conv2_U0_ap_done;
     sc_signal< sc_logic > conv2_U0_ap_continue;
@@ -101,9 +101,9 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > conv2_U0_ap_ready;
     sc_signal< sc_logic > conv2_U0_start_out;
     sc_signal< sc_logic > conv2_U0_start_write;
-    sc_signal< sc_lv<32> > conv2_U0_conv2_out_V_din;
-    sc_signal< sc_logic > conv2_U0_conv2_out_V_write;
-    sc_signal< sc_logic > conv2_U0_in_V_read;
+    sc_signal< sc_lv<16> > conv2_U0_conv2_out_V_V_din;
+    sc_signal< sc_logic > conv2_U0_conv2_out_V_V_write;
+    sc_signal< sc_logic > conv2_U0_in_V_V_read;
     sc_signal< sc_logic > pool2_U0_ap_start;
     sc_signal< sc_logic > pool2_U0_ap_done;
     sc_signal< sc_logic > pool2_U0_ap_continue;
@@ -111,9 +111,9 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > pool2_U0_ap_ready;
     sc_signal< sc_logic > pool2_U0_start_out;
     sc_signal< sc_logic > pool2_U0_start_write;
-    sc_signal< sc_lv<32> > pool2_U0_out_V_din;
-    sc_signal< sc_logic > pool2_U0_out_V_write;
-    sc_signal< sc_logic > pool2_U0_in_V_read;
+    sc_signal< sc_lv<16> > pool2_U0_out_V_V_din;
+    sc_signal< sc_logic > pool2_U0_out_V_V_write;
+    sc_signal< sc_logic > pool2_U0_in_V_V_read;
     sc_signal< sc_logic > fc1_U0_ap_start;
     sc_signal< sc_logic > fc1_U0_ap_done;
     sc_signal< sc_logic > fc1_U0_ap_continue;
@@ -121,9 +121,9 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > fc1_U0_ap_ready;
     sc_signal< sc_logic > fc1_U0_start_out;
     sc_signal< sc_logic > fc1_U0_start_write;
-    sc_signal< sc_lv<32> > fc1_U0_out_V_din;
-    sc_signal< sc_logic > fc1_U0_out_V_write;
-    sc_signal< sc_logic > fc1_U0_in_V_read;
+    sc_signal< sc_lv<16> > fc1_U0_out_V_V_din;
+    sc_signal< sc_logic > fc1_U0_out_V_V_write;
+    sc_signal< sc_logic > fc1_U0_in_V_V_read;
     sc_signal< sc_logic > fc2_U0_ap_start;
     sc_signal< sc_logic > fc2_U0_ap_done;
     sc_signal< sc_logic > fc2_U0_ap_continue;
@@ -131,36 +131,36 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > fc2_U0_ap_ready;
     sc_signal< sc_logic > fc2_U0_start_out;
     sc_signal< sc_logic > fc2_U0_start_write;
-    sc_signal< sc_lv<32> > fc2_U0_out_V_din;
-    sc_signal< sc_logic > fc2_U0_out_V_write;
-    sc_signal< sc_logic > fc2_U0_in_V_read;
+    sc_signal< sc_lv<16> > fc2_U0_out_V_V_din;
+    sc_signal< sc_logic > fc2_U0_out_V_V_write;
+    sc_signal< sc_logic > fc2_U0_in_V_V_read;
     sc_signal< sc_logic > fc3_U0_ap_start;
     sc_signal< sc_logic > fc3_U0_ap_done;
     sc_signal< sc_logic > fc3_U0_ap_continue;
     sc_signal< sc_logic > fc3_U0_ap_idle;
     sc_signal< sc_logic > fc3_U0_ap_ready;
-    sc_signal< sc_lv<32> > fc3_U0_out_V_din;
-    sc_signal< sc_logic > fc3_U0_out_V_write;
-    sc_signal< sc_logic > fc3_U0_in_V_read;
+    sc_signal< sc_lv<16> > fc3_U0_out_V_V_din;
+    sc_signal< sc_logic > fc3_U0_out_V_V_write;
+    sc_signal< sc_logic > fc3_U0_in_V_V_read;
     sc_signal< sc_logic > ap_sync_continue;
-    sc_signal< sc_logic > conv1_out_V_full_n;
-    sc_signal< sc_lv<32> > conv1_out_V_dout;
-    sc_signal< sc_logic > conv1_out_V_empty_n;
-    sc_signal< sc_logic > pool1_out_V_full_n;
-    sc_signal< sc_lv<32> > pool1_out_V_dout;
-    sc_signal< sc_logic > pool1_out_V_empty_n;
-    sc_signal< sc_logic > conv2_out_V_full_n;
-    sc_signal< sc_lv<32> > conv2_out_V_dout;
-    sc_signal< sc_logic > conv2_out_V_empty_n;
-    sc_signal< sc_logic > pool2_out_V_full_n;
-    sc_signal< sc_lv<32> > pool2_out_V_dout;
-    sc_signal< sc_logic > pool2_out_V_empty_n;
-    sc_signal< sc_logic > fc1_out_V_full_n;
-    sc_signal< sc_lv<32> > fc1_out_V_dout;
-    sc_signal< sc_logic > fc1_out_V_empty_n;
-    sc_signal< sc_logic > fc2_out_V_full_n;
-    sc_signal< sc_lv<32> > fc2_out_V_dout;
-    sc_signal< sc_logic > fc2_out_V_empty_n;
+    sc_signal< sc_logic > conv1_out_V_V_full_n;
+    sc_signal< sc_lv<16> > conv1_out_V_V_dout;
+    sc_signal< sc_logic > conv1_out_V_V_empty_n;
+    sc_signal< sc_logic > pool1_out_V_V_full_n;
+    sc_signal< sc_lv<16> > pool1_out_V_V_dout;
+    sc_signal< sc_logic > pool1_out_V_V_empty_n;
+    sc_signal< sc_logic > conv2_out_V_V_full_n;
+    sc_signal< sc_lv<16> > conv2_out_V_V_dout;
+    sc_signal< sc_logic > conv2_out_V_V_empty_n;
+    sc_signal< sc_logic > pool2_out_V_V_full_n;
+    sc_signal< sc_lv<16> > pool2_out_V_V_dout;
+    sc_signal< sc_logic > pool2_out_V_V_empty_n;
+    sc_signal< sc_logic > fc1_out_V_V_full_n;
+    sc_signal< sc_lv<16> > fc1_out_V_V_dout;
+    sc_signal< sc_logic > fc1_out_V_V_empty_n;
+    sc_signal< sc_logic > fc2_out_V_V_full_n;
+    sc_signal< sc_lv<16> > fc2_out_V_V_dout;
+    sc_signal< sc_logic > fc2_out_V_V_empty_n;
     sc_signal< sc_logic > ap_sync_done;
     sc_signal< sc_logic > ap_sync_ready;
     sc_signal< sc_lv<1> > start_for_pool1_U0_din;
@@ -190,7 +190,7 @@ struct lenet_hls : public sc_module {
     sc_signal< sc_logic > fc3_U0_start_full_n;
     sc_signal< sc_logic > fc3_U0_start_write;
     static const sc_logic ap_const_logic_0;
-    static const sc_lv<32> ap_const_lv32_0;
+    static const sc_lv<16> ap_const_lv16_0;
     static const sc_logic ap_const_logic_1;
     // Thread declarations
     void thread_ap_var_for_const0();
@@ -212,9 +212,9 @@ struct lenet_hls : public sc_module {
     void thread_fc3_U0_ap_start();
     void thread_fc3_U0_start_full_n();
     void thread_fc3_U0_start_write();
-    void thread_fc3_out_V_din();
-    void thread_fc3_out_V_write();
-    void thread_image_in_V_read();
+    void thread_fc3_out_V_V_din();
+    void thread_fc3_out_V_V_write();
+    void thread_image_in_V_V_read();
     void thread_pool1_U0_ap_continue();
     void thread_pool1_U0_ap_start();
     void thread_pool2_U0_ap_continue();
